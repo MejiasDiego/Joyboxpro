@@ -10,15 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './tabla-clientes.component.html',
   styleUrl: './tabla-clientes.component.css'
 })
-export class TablaClientesComponent implements OnInit {
+export class TablaClientesComponent  {
 
   clientes: Array<any> = []
 
   //Inyección de la dependencia (DI) del servicio con los datos de clientes 
   constructor(private clientesService: ClientesService) { }
 
-  ngOnInit(): void {
-    this.clientes = this.clientesService.getClientes();
-  }
-
+ 
 }
