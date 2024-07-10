@@ -13,7 +13,7 @@
   </label>
   <div class="ae-container-fluid rk-topbar">
     <h1 class="rk-logo">
-      <a routerLink="about">WebApp Angular<sup>tm</sup></a>
+      <a routerLink="about">Joybox<sup>tm</sup></a>
     </h1>
     <nav class="rk-navigation">
       <ul class="rk-menu">
@@ -89,7 +89,11 @@
               /></svg
           ></a>
         </li>
-        <li *ngIf="authService.isLoggedIn()===false" routerLinkActive="active" class="rk-menu__item">
+        <li
+          *ngIf="authService.isLoggedIn() === false"
+          routerLinkActive="active"
+          class="rk-menu__item"
+        >
           <a routerLink="register" class="rk-menu__link"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +108,7 @@
         </li>
         <p *ngIf="authService.isLoggedIn()">
           <a routerLink="perfil"
-            >Bienvenido, {{ authService.getUsername() | titlecase}}!</a
+            >Bienvenido, {{ authService.getUsername() | titlecase }}!</a
           >
         </p>
       </ul>
