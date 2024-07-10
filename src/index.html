@@ -6,6 +6,178 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+      var app = angular.module("joyBoxApp", []);
+
+      var imageSets = [
+        [
+          "assets/img/mando1200x675.jpg",
+          "assets/img/mandops.jpg",
+          "assets/img/cozy-vr-games-1200x675.jpg",
+        ],
+        [
+          "assets/img/Best-Games-300x200.jpg",
+          "assets/img/bosque.jpg",
+          "assets/img/cgl.jpg",
+        ],
+        [
+          "assets/img/energy.jpg",
+          "assets/img/laboratorio.jpg",
+          "assets/img/NAVARRA.jpg",
+        ],
+      ];
+
+      app.controller("MainController", function ($scope) {
+        $scope.currentIndex = 0;
+
+        $scope.updateImages = function () {
+          var currentImages = imageSets[$scope.currentIndex];
+          var images = [
+            document.getElementById("image2"),
+            document.getElementById("image3"),
+            document.getElementById("image4"),
+          ];
+
+          images.forEach(function (image, index) {
+            image.classList.add("hidden"); // Añadir la clase 'hidden' para iniciar la transición
+            setTimeout(function () {
+              image.src = currentImages[index];
+              image.classList.remove("hidden"); // Quitar la clase 'hidden' después de cambiar la imagen
+            }, 500); // Esperar el tiempo de la transición (0.5s)
+          });
+        };
+
+        $scope.changeImages = function (direction) {
+          if (direction === "left") {
+            $scope.currentIndex =
+              ($scope.currentIndex - 1 + imageSets.length) % imageSets.length;
+          } else if (direction === "right") {
+            $scope.currentIndex = ($scope.currentIndex + 1) % imageSets.length;
+          }
+          $scope.updateImages();
+        };
+
+        // Inicializar las imágenes
+        $scope.updateImages();
+      });
+
+      function changeImages(direction) {
+        var scope = angular.element(document.body).scope();
+        scope.$apply(function () {
+          scope.changeImages(direction);
+        });
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      function filterBoxes(category) {
+        var boxes = document.querySelectorAll(".box");
+        boxes.forEach(function (box) {
+          if (
+            category === "all" ||
+            box.getAttribute("data-category") === category
+          ) {
+            box.style.display = "block";
+          } else {
+            box.style.display = "none";
+          }
+        });
+
+        var buttons = document.querySelectorAll(".filter-buttons .btn");
+        buttons.forEach(function (button) {
+          if (
+            button.innerHTML.toLowerCase() === category ||
+            (category === "all" &&
+              button.innerHTML.toLowerCase() === "todos los boxes")
+          ) {
+            button.classList.add("active");
+          } else {
+            button.classList.remove("active");
+          }
+        });
+      }
+
+      document
+        .querySelector(".toggle-button")
+        .addEventListener("click", function () {
+          var hiddenText = document.querySelector(".hidden-text");
+          var arrow = document.querySelector(".toggle-button .arrow");
+          hiddenText.style.display =
+            hiddenText.style.display === "block" ? "none" : "block";
+          arrow.style.transform =
+            hiddenText.style.display === "block"
+              ? "rotate(180deg)"
+              : "rotate(0deg)";
+        });
+
+      // Función para actualizar los countdowns
+      function updateCountdowns() {
+        var countdownElements = document.querySelectorAll(".countdown");
+        countdownElements.forEach(function (countdown) {
+          var endTime = new Date(
+            countdown.getAttribute("data-end-time")
+          ).getTime();
+          var now = new Date().getTime();
+          var distance = endTime - now;
+
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdown.querySelector(".time-remaining").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+          if (distance < 0) {
+            countdown.querySelector(".time-remaining").innerHTML = "EXPIRED";
+          }
+        });
+      }
+
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // Obtener todos los elementos con la clase "box"
+        var boxes = document.querySelectorAll(".box");
+
+        // Iterar sobre cada elemento "box"
+        boxes.forEach(function (box) {
+          // Agregar un event listener para el evento de clic
+          box.addEventListener("click", function () {
+            // Obtener la URL de redirección desde el atributo "data-url"
+            var url = box.getAttribute("data-url");
+            // Redirigir a la URL especificada
+            window.location.href = url;
+          });
+        });
+      });
+
+      setInterval(updateCountdowns, 1000);
+      updateCountdowns();
+    </script>
+  </body>
+</html>
+
+<!-- INDEX.HTML QUE USABA LA PLANTILLA DE MARC -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Joybox</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="/assets/css/urku.css" />
     <link rel="stylesheet" href="/assets/css/aurora-theme-base.min.css" />
     <link rel="stylesheet" href="/assets/css/aurora-pack.min.css" />
@@ -17,4 +189,4 @@
   <body>
     <app-root></app-root>
   </body>
-</html>
+</html> -->

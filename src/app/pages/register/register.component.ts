@@ -26,7 +26,7 @@ export class RegisterComponent {
     // Realizar una solicitud GET para obtener los usuarios actuales desde el archivo JSON
     this.http
       .get<User[]>(
-        'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/box.json'
+        'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/usuario.json'
       )
       .subscribe(
         (users) => {
@@ -57,7 +57,7 @@ export class RegisterComponent {
       // Guardar el array de usuarios actualizado en el archivo JSON
       this.http
         .put(
-          'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/box.json',
+          'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/usuario.json',
           this.users
         )
         .subscribe(

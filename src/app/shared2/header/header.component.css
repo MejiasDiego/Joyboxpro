@@ -1,0 +1,124 @@
+body {
+  background-color: #6a6a6a;
+  color: #ffffff;
+  padding-top: 70px;
+  overflow-x: hidden; /* Para evitar la barra de scroll horizontal */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #3b3e48;
+  padding: 20px 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* Asegura que no haya margen inferior */
+  border-bottom: none; /* Asegura que no haya borde inferior */
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.navbar a:hover {
+  background-color: transparent; /* Elimina la caja blanca de fondo */
+}
+
+.navbar a.active {
+  background-color: transparent; /* Elimina la caja blanca de fondo */
+}
+
+.navbar-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto; /* Asegura que se alinee a la derecha */
+}
+
+.navbar-brand .logo-wrapper {
+  display: flex;
+  align-items: center; /* Centra verticalmente el logo */
+  justify-content: center; /* Centra horizontalmente el logo */
+  height: 50px; /* Ajusta la altura del contenedor del logo */
+  width: 169px; /* Ajusta el ancho del contenedor del logo */
+  overflow: hidden; /* Oculta el desbordamiento */
+  position: relative; /* Añade posicionamiento relativo */
+}
+
+.navbar-brand .logo-wrapper img {
+  height: 180px; /* Ajusta la altura del logo según sea necesario */
+  width: auto; /* Mantiene la proporción del logo */
+  position: absolute; /* Posiciona la imagen absolutamente */
+  top: 50%; /* Centra verticalmente la imagen */
+  left: 50%; /* Centra horizontalmente la imagen */
+  transform: translate(-50%, -50%); /* Ajusta la posición de la imagen */
+  transition: transform 0.3s ease-in-out; /* Añade la transición para la animación */
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+
+  .navbar a {
+    padding: 8px; /* Ajusta el padding para pantallas más pequeñas */
+  }
+}
+
+/* Añadir subrayado animado */
+.navbar a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Eliminar efecto hover del logo */
+.navbar a.logo:hover {
+  background-color: transparent;
+}
+
+.navbar a.logo:hover::after {
+  width: 0;
+}
+
+/* Añadir animación de agrandar y volver al tamaño original para el logo */
+.navbar-brand .logo-wrapper img:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Escala la imagen a 110% */
+}

@@ -18,7 +18,7 @@ export class AuthService {
 
   loadUsers(): Observable<User[]> {
     return this.http.get<User[]>(
-      'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/box.json'
+      'https://joybox-678b1-default-rtdb.europe-west1.firebasedatabase.app/usuario.json'
     );
   }
 

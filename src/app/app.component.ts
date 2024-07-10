@@ -1,26 +1,14 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-// import { AboutComponent } from './pages/about/about.component';
-// import { TermsComponent } from './pages/terms/terms.component';
-// import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-
+import { FooterComponent } from "./shared2/footer/footer.component";
+import { HeaderComponent } from "./shared2/header/header.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent
-    // AboutComponent,
-    // TermsComponent,
-    // PortfolioComponent,
-  ],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styles: '',
+  styleUrl: './app.component.css',
 })
-
 export class AppComponent {
-  title = 'Web App Angular TGN 2024';
+  title = 'Joybox';
 }

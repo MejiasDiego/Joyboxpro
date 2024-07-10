@@ -9,9 +9,12 @@
   <h3 class="ae-u-bolder au-mb-3">
     Usuario: {{ authService.getUsername() | titlecase }}
   </h3>
-  <p class="au-lg-ta-left ae-u-bolder au-mb-3 au-pl-4 au-pr-4">Nombre: {{ usuario?.nombre }}</p>
-  <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Correo: {{ usuario?.descripcion }}</p>
-  <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">Pass: {{ psw | password }}</p>
+  <p class="au-lg-ta-left ae-u-bolder au-mb-3 au-pl-4 au-pr-4">
+    Nombre: {{ usuario?.usuario }}
+  </p>
+  <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
+    Pass: {{ psw | password }}
+  </p>
   <button (click)="authService.logout()">Cerrar sesión</button>
 </div>
 <!-- </div> -->
