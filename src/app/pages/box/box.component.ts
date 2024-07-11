@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
 import { User } from '../../interfaces/user.interface';
+import { RouterLink, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-box',
