@@ -21,22 +21,26 @@ body {
   text-align: justify;
 }
 
-.box,
-.main-image-box {
-  background-color: #4b4b4b;
-  color: #ffffff;
+.box {
+  background-color: #555555;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
   text-align: center;
   position: relative;
-  margin: 10px 0;
-  height: 320px; /* Ajuste final de altura */
   overflow: hidden;
-  border-radius: 15px;
+  width: 100%;
+  max-width: 350px; /* Aumentado el ancho máximo */
 }
 
-.main-image-box {
-  height: 370px; /* Ajuste final de altura */
-  width: 100%;
+.box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease;
+  border-radius: 10px; /* Imágenes redondeadas */
 }
+
 
 .inner-content {
   position: relative;
