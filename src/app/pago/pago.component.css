@@ -1,0 +1,64 @@
+.container-custom {
+    background-color: #4b4b4b;
+    padding: 20px;
+    color: #ffffff;
+    min-height: calc(100vh - 110px);
+  }
+  
+  .payment-form {
+    background-color: #555555;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .payment-form h2 {
+    color: #ec0909;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+  }
+  
+  .payment-form input,
+  .payment-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .payment-form input[type="submit"] {
+    background-color: #ec0909;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-form input[type="submit"]:hover {
+    background-color: #bf0707;
+  }
+  
+  .payment-form input:invalid {
+    border: 2px solid #ec0909;
+  }
+  
+  .error-message {
+    color: #ffcccb;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-form input.ng-touched.ng-invalid {
+    border: 2px solid #ec0909;
+  }
+  
