@@ -67,6 +67,60 @@ h1 {
   margin-right: 10px; /* Ajustar el margen derecho */
 }
 
+/* Estilos para el contenedor inspirado en Humble Bundle */
+.humble-bundle-container {
+  background-image: url('/assets/img/background.jpg'); /* Asegúrate de tener una imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+.humble-bundle-container .content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.humble-bundle-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.humble-bundle-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.humble-bundle-container ul li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.humble-bundle-container button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.humble-bundle-container button:hover {
+  background-color: #45a049;
+}
+
+.humble-bundle-container button a {
+  color: white;
+  text-decoration: none;
+}
+
 /* Media Queries para Responsividad */
 @media (max-width: 1200px) {
   .content-wrapper {
