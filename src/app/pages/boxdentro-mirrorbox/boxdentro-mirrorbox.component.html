@@ -1,0 +1,143 @@
+<div class="parent">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>MIRR BOX</h1>
+          <h3>Box juego</h3>
+  
+          <div class="row" id="game-list">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=01de4dc6-df16-4f55-85a0-5f587b62ea63"
+                  class="card-img-top"
+                  alt="Papers, Please"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Papers, Please</h5>
+                  <p class="card-text">97% positivo en Steam</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f"
+                  class="card-img-top"
+                  alt="This War of Mine"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">This War of Mine</h5>
+                  <p class="card-text">94% positivo en Steam</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4"
+                  class="card-img-top"
+                  alt="Detroid: Become Human"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Detroid: Become Human</h5>
+                  <p class="card-text">95% positivo en Steam</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUnpacking.webp?alt=media&token=73baadb6-d5f5-4a71-accf-c22f9f2a2e29"
+                  class="card-img-top"
+                  alt="My Child Lebensborn"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">My Child Lebensborn</h5>
+                  <p class="card-text">96% positivo en Steam</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FCoffe%20Talk.webp?alt=media&token=982c0996-bf73-44c5-86cc-eff56e9155f1"
+                  class="card-img-top"
+                  alt="Bury Me, My Love"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Bury Me, My Love</h5>
+                  <p class="card-text">70% positivo en Steam</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FJusant.webp?alt=media&token=5d2b518d-87e1-41ef-9dec-c2fcdb65f1ff"
+                  class="card-img-top"
+                  alt="Valiant Hearts: The Great War"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Valiant Hearts: The Great War</h5>
+                  <p class="card-text">95% positivo en Steam</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bundle-info">
+              <h3>La naturaleza es bella</h3>
+              <p>
+                Explorar y salva la naturaleza a través de aventuras submarinas y
+                creando tu granja.
+              </p>
+              <div class="pricing-options">
+                <button class="btn btn-secondary" (click)="updatePrice(1)">
+                  1 €
+                </button>
+                <button class="btn btn-secondary" (click)="updatePrice(4.61)">
+                  4,61 €
+                </button>
+                <button class="btn btn-secondary" (click)="updatePrice(13.84)">
+                  13,84 €
+                </button>
+                <button class="btn btn-secondary" (click)="updatePrice(25)">
+                  25 €
+                </button>
+                <button class="btn btn-secondary" (click)="updatePrice(30)">
+                  30 €
+                </button>
+                <button class="btn btn-secondary" (click)="updatePrice(35)">
+                  35 €
+                </button>
+  
+                <input
+                  type="number"
+                  class="form-control"
+                  [(value)]="customPrice"
+                  placeholder="Otro importe"
+                  (input)="onCustomPriceChange($event)"
+                />
+              </div>
+              <button class="btn btn-primary">Realizar pedido</button>
+              <div class="countdown">
+                <h4>Tiempo restante para que acabe el box:</h4>
+                <div id="countdown-timer">
+                  <h2>{{ countdown }}</h2>
+                </div>
+              </div>
+              <div class="donation-info">
+                <h4>Organización benéfica</h4>
+                <p>
+                  Este box apoya a
+                  <a href="https://www.greenpeace.org/">Green Peace</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
