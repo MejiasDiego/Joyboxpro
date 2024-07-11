@@ -4,7 +4,6 @@ Package: @angular/core
 License: "MIT"
 
 
-
 --------------------------------------------------------------------------------
 Package: rxjs
 License: "Apache-2.0"
@@ -244,12 +243,12 @@ License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: @angular/forms
+Package: ngx-cookie-service
 License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: ngx-cookie-service
+Package: @angular/forms
 License: "MIT"
 
 
