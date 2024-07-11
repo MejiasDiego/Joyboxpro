@@ -73,22 +73,6 @@
   font-size: 1.5em;
 }
 
-.filter-buttons {
-  text-align: center; /* Alinea los botones al centro */
-  margin-bottom: 10px;
-}
-
-.filter-buttons .btn {
-  margin: 2px;
-  padding: 5px 10px; /* Añade un padding más estrecho */
-  font-size: 0.9em;
-}
-
-.filter-buttons .btn.active {
-  background-color: #ffffff;
-  color: #2c2c2c;
-}
-
 .row p {
   font-size: 1.1em; /* Incrementa el tamaño de fuente del texto */
   line-height: 1.5em; /* Incrementa el interlineado */
@@ -199,11 +183,6 @@
     display: none; /* Ocultar los botones de cambio de imagen en pantallas pequeñas */
   }
 
-  .filter-buttons .btn {
-    font-size: 0.8em; /* Ajusta el tamaño de fuente de los botones */
-    padding: 5px; /* Reduce el padding de los botones */
-  }
-
   .row p {
     font-size: 1em; /* Reduce el tamaño de fuente del texto */
     line-height: 1.4em; /* Reduce el interlineado */
@@ -238,11 +217,6 @@
     padding: 5px 10px; /* Reduce el padding de los enlaces */
   }
 
-  .filter-buttons .btn {
-    font-size: 0.7em; /* Ajusta el tamaño de fuente de los botones */
-    padding: 5px 8px; /* Ajusta el padding de los botones */
-  }
-
   .countdown {
     font-size: 1em; /* Ajusta el tamaño de fuente del contador */
     padding: 8px; /* Ajusta el padding del contador */
@@ -260,4 +234,27 @@
   .promo-text h1 {
     font-size: 1.2em; /* Ajusta el tamaño de fuente del título */
   }
+}
+.filter-buttons {
+  text-align: center; /* Alinea los botones al centro */
+  margin-bottom: 10px;
+}
+
+.filter-buttons .btn {
+  font-size: 0.7em; /* Ajusta el tamaño de fuente de los botones */
+  padding: 5px 8px; /* Ajusta el padding de los botones */
+}
+.filter-buttons .btn {
+  font-size: 0.8em; /* Ajusta el tamaño de fuente de los botones */
+  padding: 5px; /* Reduce el padding de los botones */
+}
+.filter-buttons .btn {
+  margin: 2px;
+  padding: 5px 10px; /* Añade un padding más estrecho */
+  font-size: 0.9em;
+}
+
+.filter-buttons .btn.active {
+  background-color: #ffffff;
+  color: #2c2c2c;
 }
