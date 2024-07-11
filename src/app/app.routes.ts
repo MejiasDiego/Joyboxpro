@@ -9,6 +9,8 @@ import { LoginComponent } from './pages/loginJoybox/login.component';
 import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './pages/register/register.component';
 import { BoxDentroComponent } from './pages/boxdentro/boxdentro.component';
+import { PagoComponent } from './pago/pago.component';
+
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +22,7 @@ export const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'pago', component: PagoComponent},
   { path: '**', component: Pagina404Component },
   
 ];
