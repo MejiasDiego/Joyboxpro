@@ -31,22 +31,23 @@ export class BoxDentroCHILLBOXComponent implements OnInit {
   toggleDescription(title: string) {
     // Tu lógica para mostrar/ocultar la descripción del juego
   }
-  filterBoxes(category: string) { 
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach((box) => {
-      const boxCategory = box.getAttribute('data-category');
-      if (category === 'all' || boxCategory === category) {
-        (box as HTMLElement).style.display = 'block';
+  filterCards(category: string) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute('data-category');
+      if (category === 'all' || Category === category) {
+        (card as HTMLElement).style.display = 'block';
       } else {
-        (box as HTMLElement).style.display = 'none';
+        (card as HTMLElement).style.display = 'none';
       }
     });
-
+    //que busque el Indice y asignarlo al botón, en vez de un forEach, hacer un for.
     const buttons = document.querySelectorAll('.filter-buttons .btn');
     buttons.forEach((button) => {
       if (
         button.textContent?.toLowerCase() === category ||
-        (category === 'all' && button.textContent?.toLowerCase() === 'todos los boxes')
+        (category === 'all' &&
+          button.textContent?.toLowerCase() === 'todos los 4,61')
       ) {
         button.classList.add('active');
       } else {
