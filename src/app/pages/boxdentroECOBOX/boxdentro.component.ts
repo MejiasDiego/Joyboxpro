@@ -1,17 +1,46 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   selector: 'app-boxdentro',
   templateUrl: './boxdentro.component.html',
-  styleUrls: ['./boxdentro.component.css']
+  styleUrls: ['./boxdentro.component.css'],
 })
 export class BoxDentroComponent implements OnInit {
   games = [
     {
       title: 'Stardew Valley',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FStardewValley.webp?alt=media&token=895a7559-e651-4662-a37d-b771532e46f4'
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FStardewValley.webp?alt=media&token=895a7559-e651-4662-a37d-b771532e46f4',
+      rating: '96% positivo en Steam'
     },
-    // Añade más juegos aquí
+    {
+      title: 'Firewatch',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Ffirewatch.jpg?alt=media&token=0cffd4b1-eed0-4679-add0-a80ebcc8b4b1',
+      rating: '93% positivo en Steam'
+    },
+    {
+      title: 'Farming Simulator',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FfarmingSimulator.webp?alt=media&token=ae42ef33-93fc-4886-bc78-c9ae485869a3',
+      rating: '80% positivo en Steam'
+    },
+    {
+      title: 'Unravel',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUnravel.webp?alt=media&token=41a231f6-33a1-4012-a055-64bcf0866e35',
+      rating: '91% positivo en Steam'
+    },
+    {
+      title: 'The Forest',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThe_Forest_game.webp?alt=media&token=db9ca9eb-e6a0-4846-9b47-4f905ad84f9c',
+      rating: '82% positivo en Steam'
+    },
+    {
+      title: 'Maneater',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FManeater.webp?alt=media&token=4e6673a6-6867-4ae1-a3b4-c796d92b6b86',
+      rating: '78% positivo en Steam'
+    }
   ];
 
   displayedGames = this.games;
@@ -20,16 +49,15 @@ export class BoxDentroComponent implements OnInit {
   customPrice: number = 0;
 
   ngOnInit() {
-    this.showBundle('complete');
     this.startCountdown();
   }
 
-  showBundle(filter: string) {
-    // Tu lógica para filtrar los juegos
-  }
-
-  toggleDescription(title: string) {
-    // Tu lógica para mostrar/ocultar la descripción del juego
+  filterGames(amount: number) {
+    if (amount === 0) {
+      this.displayedGames = this.games;
+    } else {
+      this.displayedGames = this.games.slice(0, amount);
+    }
   }
 
   startCountdown() {
@@ -53,9 +81,11 @@ export class BoxDentroComponent implements OnInit {
 
   updatePrice(amount: number) {
     this.customPrice = amount;
+    this.filterGames(amount);
   }
 
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
+    this.filterGames(this.customPrice);
   }
 }

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -47,38 +46,14 @@ export class BoxDentroCHILLBOXComponent implements OnInit {
     this.startCountdown();
   }
 
-
-  showBundle(filter: string) {
-    // Tu lógica para filtrar los juegos
-  }
-
-  toggleDescription(title: string) {
-    // Tu lógica para mostrar/ocultar la descripción del juego
-  }
-  filterCards(category: string) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card) => {
-      const cardCategory = card.getAttribute('data-category');
-      if (category === 'all' || category === category) {
-        (card as HTMLElement).style.display = 'block';
-      } else {
-        (card as HTMLElement).style.display = 'none';
-      }
-    });
-    //que busque el Indice y asignarlo al botón, en vez de un forEach, hacer un for.
-    const buttons = document.querySelectorAll('.filter-buttons .btn');
-    buttons.forEach((button) => {
-      if (
-        button.textContent?.toLowerCase() === category ||
-        (category === 'all' &&
-          button.textContent?.toLowerCase() === 'todos los 4,61')
-      ) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
-    });
->>>>>>> 6f463d5a753e51606e40568aeb4527ce1073a060
+  filterCards(amount: number) {
+    // Lógica para mostrar las cartas según el importe
+    if (amount === 0) {
+      this.displayedGames = this.games;
+    } else {
+      // Aquí puedes ajustar la lógica para filtrar los juegos
+      this.displayedGames = this.games.slice(0, amount); // Ejemplo: muestra solo los primeros 'amount' juegos
+    }
   }
 
   startCountdown() {
