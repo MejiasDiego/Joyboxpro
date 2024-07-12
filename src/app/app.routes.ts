@@ -10,6 +10,8 @@ import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './pages/register/register.component';
 import { BoxDentroComponent } from './pages/boxdentroECOBOX/boxdentro.component';
 import { PagoComponent } from './pago/pago.component';
+import { CarritoComponent } from './carrito/carrito.component';
+
 import { BoxdentroUNDERBOXComponent } from './pages/boxdentro-underbox/boxdentro-underbox.component';
 import { BoxdentroSPRINGBOXComponent } from './pages/boxdentro-springbox/boxdentro-springbox.component';
 import { BoxDentroCHILLBOXComponent } from './pages/boxdentro-chillbox/boxdentro-chillbox.component';
@@ -26,6 +28,7 @@ export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'about', component: AboutComponent },
   { path: 'perfil', component: PerfilComponent },
+  { path: 'carrito', component: CarritoComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'ecobox', component: BoxDentroComponent },
   { path: 'chillbox', component: BoxDentroCHILLBOXComponent },

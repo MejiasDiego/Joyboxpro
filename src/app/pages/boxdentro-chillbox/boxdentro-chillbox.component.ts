@@ -35,7 +35,7 @@ export class BoxDentroCHILLBOXComponent implements OnInit {
     const cards = document.querySelectorAll('.card');
     cards.forEach((card) => {
       const cardCategory = card.getAttribute('data-category');
-      if (category === 'all' || Category === category) {
+      if (category === 'all' || category === category) {
         (card as HTMLElement).style.display = 'block';
       } else {
         (card as HTMLElement).style.display = 'none';
