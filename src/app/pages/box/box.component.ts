@@ -41,16 +41,16 @@ export class BoxComponent implements OnInit {
   }
 
   filterBoxes(category: string) {
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach((box) => {
-      const boxCategory = box.getAttribute('data-category');
-      if (category === 'all' || boxCategory === category) {
-        (box as HTMLElement).style.display = 'block';
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute('data-category');
+      if (category === 'all' || cardCategory === category) {
+        (card as HTMLElement).style.display = 'block';
       } else {
-        (box as HTMLElement).style.display = 'none';
+        (card as HTMLElement).style.display = 'none';
       }
     });
-
+  
     const buttons = document.querySelectorAll('.filter-buttons .btn');
     buttons.forEach((button) => {
       if (
@@ -63,4 +63,4 @@ export class BoxComponent implements OnInit {
       }
     });
   }
-}
+}  

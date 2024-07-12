@@ -31,6 +31,29 @@ export class BoxDentroCHILLBOXComponent implements OnInit {
   toggleDescription(title: string) {
     // Tu lógica para mostrar/ocultar la descripción del juego
   }
+  filterBoxes(category: string) { 
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+      const boxCategory = box.getAttribute('data-category');
+      if (category === 'all' || boxCategory === category) {
+        (box as HTMLElement).style.display = 'block';
+      } else {
+        (box as HTMLElement).style.display = 'none';
+      }
+    });
+
+    const buttons = document.querySelectorAll('.filter-buttons .btn');
+    buttons.forEach((button) => {
+      if (
+        button.textContent?.toLowerCase() === category ||
+        (category === 'all' && button.textContent?.toLowerCase() === 'todos los boxes')
+      ) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  }
 
   startCountdown() {
     const countdownInterval = setInterval(() => {

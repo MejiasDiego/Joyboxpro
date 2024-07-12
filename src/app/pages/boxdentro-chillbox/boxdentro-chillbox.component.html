@@ -21,7 +21,7 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FJourney.webp?alt=media&token=97bf67a8-d71f-4fe4-b983-643d5c5f9836"
+                src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FA%20shot%20Hike.webp?alt=media&token=207a8a69-8515-43ca-8ae9-471b96cec0eb"
                 class="card-img-top"
                 alt="A Short Hike"
               />
@@ -68,7 +68,7 @@
                 <h5 class="card-title">Caffe Talk</h5>
                 <p class="card-text">95% positivo en Steam</p>
               </div>
-              </div>
+            </div>
           </div>
           <div class="col-md-4">
             <div class="card">
@@ -82,60 +82,66 @@
                 <p class="card-text">94% positivo en Steam</p>
               </div>
             </div>
-            </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="bundle-info">
-            <h3>Tómatelo con calma</h3>
-            <p>
-              Relájate con este box, diseñado para la relajación y la introspección, con juegos que ofrecen experiencias tranquilas y meditativas.
-            </p>
-            <div class="pricing-options">
-              <button class="btn btn-secondary" (click)="updatePrice(1)">
-                1 €
-              </button>
-              <button class="btn btn-secondary" (click)="updatePrice(4.61)">
-                4,61 €
-              </button>
-              <button class="btn btn-secondary" (click)="updatePrice(13.84)">
-                13,84 €
-              </button>
-              <button class="btn btn-secondary" (click)="updatePrice(25)">
-                25 €
-              </button>
-              <button class="btn btn-secondary" (click)="updatePrice(30)">
-                30 €
-              </button>
-              <button class="btn btn-secondary" (click)="updatePrice(35)">
-                35 €
-              </button>
+      </div>
+      <div class="col-md-4">
+        <div class="bundle-info">
+          <h3>Tómatelo con calma</h3>
+          <p>
+            Relájate con este box, diseñado para la relajación y la
+            introspección, con juegos que ofrecen experiencias tranquilas y
+            meditativas.
+          </p>
+          <div class="pricing-options">
+            <button class="btn btn-secondary" (click)="updatePrice(1)">
+              1 €
+            </button>
+            <button
+              class="btn btn-secondary filterBoxes"
+              (click)="updatePrice(4.61)"
+            >
+              4,61 €
+            </button>
+            <button class="btn btn-secondary" (click)="updatePrice(13.84)">
+              13,84 €
+            </button>
+            <button class="btn btn-secondary" (click)="updatePrice(25)">
+              25 €
+            </button>
+            <button class="btn btn-secondary" (click)="updatePrice(30)">
+              30 €
+            </button>
+            <button class="btn btn-secondary" (click)="updatePrice(35)">
+              35 €
+            </button>
 
-              <input
-                type="number"
-                class="form-control"
-                [(value)]="customPrice"
-                placeholder="Otro importe"
-                (input)="onCustomPriceChange($event)"
-              />
+            <input
+              type="number"
+              class="form-control"
+              [(value)]="customPrice"
+              placeholder="Otro importe"
+              (input)="onCustomPriceChange($event)"
+            />
+          </div>
+          <button class="btn btn-primary">Realizar pedido</button>
+          <div class="countdown">
+            <h4>Tiempo restante para que acabe el box:</h4>
+            <div id="countdown-timer">
+              <h2>{{ countdown }}</h2>
             </div>
-            <button class="btn btn-primary">Realizar pedido</button>
-            <div class="countdown">
-              <h4>Tiempo restante para que acabe el box:</h4>
-              <div id="countdown-timer">
-                <h2>{{ countdown }}</h2>
-              </div>
-            </div>
-            <div class="donation-info">
-              <h4>Organización benéfica</h4>
-              <p>
-                Este box apoya a
-                <a href="https://consaludmental.org/">Confederación Salud Mental España</a>.
-              </p>
-            </div>
+          </div>
+          <div class="donation-info">
+            <h4>Organización benéfica</h4>
+            <p>
+              Este box apoya a
+              <a href="https://consaludmental.org/"
+                >Confederación Salud Mental España</a
+              >.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
