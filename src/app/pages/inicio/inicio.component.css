@@ -136,7 +136,29 @@ h1 {
 }
 
 
+.verBox {
+  background-color: #EC0909;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 0px;
+  text-transform: uppercase;
+  text-align: center; /* Asegura que el texto esté centrado */
+  display: inline-block; /* Asegura que el botón mantenga su formato */
+}
 
+.verBox a {
+  color: white;
+  text-decoration: none;
+}
+
+.verBox:hover {
+  background-color: rgb(190, 23, 23);
+  color: #EC0909;
+}
 
 
 .humble-bundle-container ul li {
