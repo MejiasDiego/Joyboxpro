@@ -1,141 +1,69 @@
 <div class="parent">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h1>NEUTRAL BOX</h1>
-  
-          <div class="row" id="game-list">
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Flife%20is%20strange%203.jpg?alt=media&token=bce17fc6-00d2-41d0-934a-b30c6aa1a652"
-                  class="card-img-top"
-                  alt="Life is Strange 3: Three Colours"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Life is Strange 3</h5>
-                  <p class="card-text">70% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Ftell%20me%20why.jpg?alt=media&token=88bee779-c3bd-4f17-9dc2-08c04cb22662"
-                  class="card-img-top"
-                  alt="Tell Me Why"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Tell Me Why</h5>
-                  <p class="card-text">90% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fgone%20home.jpg?alt=media&token=617f5169-768a-406b-9fd0-9e4166d33e50"
-                  class="card-img-top"
-                  alt="Gone Home"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Gone Home</h5>
-                  <p class="card-text">77% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fceleste.webp?alt=media&token=75789dba-24fb-4021-8d91-fd6a2cf2d69f"
-                  class="card-img-top"
-                  alt="Celeste"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Celeste</h5>
-                  <p class="card-text">97% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUndertale.webp?alt=media&token=5055cd8d-ee7e-419d-9912-4b1688c812cc"
-                  class="card-img-top"
-                  alt="Undertale"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Undertale</h5>
-                  <p class="card-text">96% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fthe%20outer%20worlds.jpg?alt=media&token=c5cafb9d-a54d-4df4-87df-73d0135379e5"
-                  class="card-img-top"
-                  alt="The Outer Worlds"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">The Outer Worlds</h5>
-                  <p class="card-text">84% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="bundle-info">
-              <h3>Enorgullécete</h3>
-              <p>
-                Una colección de productos que ofrecen apoyo, recursos educativos y herramientas prácticas para fortalecer la comunidad LGBTQ+, abordando temas desde la identidad y la diversidad hasta los derechos y el activismo.
-              </p>
-              <div class="pricing-options">
-                <button class="btn btn-secondary" (click)="updatePrice(1)">
-                  1 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(4.61)">
-                  4,61 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(13.84)">
-                  13,84 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(25)">
-                  25 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(30)">
-                  30 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(35)">
-                  35 €
-                </button>
-  
-                <input
-                  type="number"
-                  class="form-control"
-                  [(value)]="customPrice"
-                  placeholder="Otro importe"
-                  (input)="onCustomPriceChange($event)"
-                />
-              </div>
-              <button class="btn btn-primary">Realizar pedido</button>
-              <div class="countdown">
-                <h4>Tiempo restante para que acabe el box:</h4>
-                <div id="countdown-timer">
-                  <h2>{{ countdown }}</h2>
-                </div>
-              </div>
-              <div class="donation-info">
-                <h4>Organización benéfica</h4>
-                <p>
-                  Este box apoya a
-                  <a href="https://www.redi-lgbti.org/">Redi</a>.
-                </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>NEUTRAL BOX</h1>
+        <div class="row" id="game-list">
+          <div class="col-md-4" *ngFor="let game of displayedGames">
+            <div class="card">
+              <img [src]="game.img" class="card-img-top" [alt]="game.title" />
+              <div class="card-body">
+                <h5 class="card-title">{{ game.title }}</h5>
+                <p class="card-text">{{ game.rating }}</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bundle-info">
+          <h3>Enorgullécete</h3>
+          <p>
+            Una colección de productos que ofrecen apoyo, recursos educativos y herramientas prácticas para fortalecer la comunidad LGBTQ+, abordando temas desde la identidad y la diversidad hasta los derechos y el activismo.
+          </p>
+          <div class="pricing-options">
+            <button class="btn btn-secondary" (click)="filterGames(1)">
+              1 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(2)">
+              4,61 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(3)">
+              13,84 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(4)">
+              25 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(5)">
+              30 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(6)">
+              35 €
+            </button>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="customPrice"
+              placeholder="Otro importe"
+              (input)="onCustomPriceChange($event)"
+            />
+          </div>
+          <button class="btn btn-primary">Realizar pedido</button>
+          <div class="countdown">
+            <h4>Tiempo restante para que acabe el box:</h4>
+            <div id="countdown-timer">
+              <h2>{{ countdown }}</h2>
+            </div>
+          </div>
+          <div class="donation-info">
+            <h4>Organización benéfica</h4>
+            <p>
+              Este box apoya a
+              <a href="https://www.redi-lgbti.org/">Redi</a>.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>

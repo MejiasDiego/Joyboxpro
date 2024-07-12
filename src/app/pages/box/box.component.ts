@@ -1,17 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../servicios/auth.service';
-import { User } from '../../interfaces/user.interface';
-import { RouterLink, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-box',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,CommonModule],
   templateUrl: './box.component.html',
   styleUrl: './box.component.css',
 })
 export class BoxComponent implements OnInit {
-  
   ngOnInit(): void {
     this.updateCountdowns();
     setInterval(() => this.updateCountdowns(), 1000);
@@ -20,12 +19,16 @@ export class BoxComponent implements OnInit {
   updateCountdowns() {
     const countdownElements = document.querySelectorAll('.countdown');
     countdownElements.forEach((countdown) => {
-      const endTime = new Date(countdown.getAttribute('data-end-time')!).getTime();
+      const endTime = new Date(
+        countdown.getAttribute('data-end-time')!
+      ).getTime();
       const now = new Date().getTime();
       const distance = endTime - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -50,12 +53,13 @@ export class BoxComponent implements OnInit {
         (card as HTMLElement).style.display = 'none';
       }
     });
-  
+
     const buttons = document.querySelectorAll('.filter-buttons .btn');
     buttons.forEach((button) => {
       if (
         button.textContent?.toLowerCase() === category ||
-        (category === 'all' && button.textContent?.toLowerCase() === 'todos los boxes')
+        (category === 'all' &&
+          button.textContent?.toLowerCase() === 'todos los boxes')
       ) {
         button.classList.add('active');
       } else {
@@ -63,4 +67,4 @@ export class BoxComponent implements OnInit {
       }
     });
   }
-}  
+}

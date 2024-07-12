@@ -1,18 +1,46 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 @Component({
-  selector: 'app-boxdentro-peacebox',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
+  selector: 'app-boxdentro-peacebox',
   templateUrl: './boxdentro-peacebox.component.html',
-  styleUrl: './boxdentro-peacebox.component.css',
+  styleUrls: ['./boxdentro-peacebox.component.css'],
 })
 export class BoxdentroPEACEBOXComponent implements OnInit {
   games = [
     {
-      title: 'Stardew Valley',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FStardewValley.webp?alt=media&token=895a7559-e651-4662-a37d-b771532e46f4',
+      title: 'Reigns',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FReigns.webp?alt=media&token=ca3ad4a7-f81b-4d37-a3b0-13cedd12e663',
+      rating: '87% positivo en Steam'
     },
-    // Añade más juegos aquí
+    {
+      title: 'Minecraft',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FMinecraft.webp?alt=media&token=a1186f44-fa73-4ca1-9319-19a4985764fa',
+      rating: '99% positivo en Steam'
+    },
+    {
+      title: 'Phoenix Wright: Ace Attorney',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPhoenix%20Wright.webp?alt=media&token=fecd9902-a320-4d02-9e6b-ac6d695fe406',
+      rating: '97% positivo en Steam'
+    },
+    {
+      title: 'Pentiment',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPentiment.webp?alt=media&token=435d5087-0e42-4d73-99bc-645a0da27f2f',
+      rating: '95% positivo en Steam'
+    },
+    {
+      title: 'Disco Elysium',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDisco%20Elysium.webp?alt=media&token=00f543d9-0608-4315-b3c4-45e972c37331',
+      rating: '93% positivo en Steam'
+    },
+    {
+      title: 'Never Alone',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FNever%20Alone.webp?alt=media&token=973c6315-8b82-41bb-887a-e982a6008301',
+      rating: '81% positivo en Steam'
+    },
   ];
 
   displayedGames = this.games;
@@ -21,16 +49,16 @@ export class BoxdentroPEACEBOXComponent implements OnInit {
   customPrice: number = 0;
 
   ngOnInit() {
-    this.showBundle('complete');
     this.startCountdown();
   }
 
-  showBundle(filter: string) {
-    // Tu lógica para filtrar los juegos
-  }
-
-  toggleDescription(title: string) {
-    // Tu lógica para mostrar/ocultar la descripción del juego
+  filterGames(amount: number) {
+    // Lógica para mostrar las cartas según el importe
+    if (amount === 0) {
+      this.displayedGames = this.games;
+    } else {
+      this.displayedGames = this.games.slice(0, amount); // Ejemplo: muestra solo los primeros 'amount' juegos
+    }
   }
 
   startCountdown() {
@@ -39,9 +67,7 @@ export class BoxdentroPEACEBOXComponent implements OnInit {
       const distance = this.countdownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -56,9 +82,11 @@ export class BoxdentroPEACEBOXComponent implements OnInit {
 
   updatePrice(amount: number) {
     this.customPrice = amount;
+    this.filterGames(amount);
   }
 
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
+    this.filterGames(this.customPrice);
   }
 }

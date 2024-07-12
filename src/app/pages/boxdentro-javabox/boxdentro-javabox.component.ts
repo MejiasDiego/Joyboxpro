@@ -1,35 +1,64 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   selector: 'app-boxdentrojava',
   templateUrl: './boxdentro-javabox.component.html',
   styleUrls: ['./boxdentro-javabox.component.css'],
 })
 export class BoxDentroJAVABOXComponent implements OnInit {
-  games = [
+  books = [
     {
-      title: 'Stardew Valley',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FStardewValley.webp?alt=media&token=895a7559-e651-4662-a37d-b771532e46f4',
+      title: '3D Programming in Java',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2F3D%20Programming%20in%20Java.jpg?alt=media&token=d1ec6d8c-abae-4d99-8557-3df5f347b10d',
+      rating: '4/5 Goodreads'
     },
-    // Añade más juegos aquí
+    {
+      title: 'A Practical Introduction to Data Structures',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FA%20Practical%20Introduction%20to%20Data%20Structures%20and%20Algorithm%20Analysis%20Third%20Edition.jpg?alt=media&token=7be6243a-6a8c-4db5-9303-242c62bdaa75',
+      rating: '5/5 Goodreads'
+    },
+    {
+      title: 'An Introduction to the USA Computing Olympiad',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FAn%20Introduction%20to%20the%20USA%20Computing%20Olympiad%2C%20Java%20Edition.webp?alt=media&token=286c8a84-1442-487f-a0fb-dc6d1c0bed64',
+      rating: '4/5 Goodreads'
+    },
+    {
+      title: 'Apache Jakarta Commons: Reusable Java Components',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FApache%20Jakarta.png?alt=media&token=7146ad32-8e60-45e5-a77d-7e94de12c722',
+      rating: '4/5 Goodreads'
+    },
+    {
+      title: 'Artificial Intelligence-Foundations of Computational Agents, Second Edition',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FArtificial%20Intelligence-Foundations%20of%20Computational%20Agents%2C%20Second%20Edition.jpg?alt=media&token=8eec332a-d1e0-445c-a6b0-e89732a5a5c4',
+      rating: '4/5 Goodreads'
+    },
+    {
+      title: 'Building Back-End Web Apps with Java, JPA and JSF',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FBuilding%20Back-End%20Web%20Apps%20with%20Java%2C%20JPA%20and%20JSF.png?alt=media&token=98cb4f61-4f0d-4f82-b37b-31b2d6c845d6',
+      rating: '4/5 Goodreads'
+    },
   ];
 
-  displayedGames = this.games;
+  displayedBooks = this.books;
   countdown: string = '';
   countdownDate: number = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
   customPrice: number = 0;
 
   ngOnInit() {
-    this.showBundle('complete');
     this.startCountdown();
   }
 
-  showBundle(filter: string) {
-    // Tu lógica para filtrar los juegos
-  }
-
-  toggleDescription(title: string) {
-    // Tu lógica para mostrar/ocultar la descripción del juego
+  filterBooks(amount: number) {
+    // Lógica para mostrar las cartas según el importe
+    if (amount === 0) {
+      this.displayedBooks = this.books;
+    } else {
+      this.displayedBooks = this.books.slice(0, amount); // Ejemplo: muestra solo los primeros 'amount' libros
+    }
   }
 
   startCountdown() {
@@ -38,9 +67,7 @@ export class BoxDentroJAVABOXComponent implements OnInit {
       const distance = this.countdownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -55,9 +82,11 @@ export class BoxDentroJAVABOXComponent implements OnInit {
 
   updatePrice(amount: number) {
     this.customPrice = amount;
+    this.filterBooks(amount);
   }
 
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
+    this.filterBooks(this.customPrice);
   }
 }

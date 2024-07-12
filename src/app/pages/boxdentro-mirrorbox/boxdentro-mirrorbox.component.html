@@ -1,141 +1,71 @@
 <div class="parent">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h1>MIRROR BOX</h1>
-  
-          <div class="row" id="game-list">
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=cf0599e8-574e-4555-ab1f-64566d9ff701"
-                  class="card-img-top"
-                  alt="Papers, Please"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Papers, Please</h5>
-                  <p class="card-text">97% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f"
-                  class="card-img-top"
-                  alt="This War of Mine"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">This War of Mine</h5>
-                  <p class="card-text">94% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4"
-                  class="card-img-top"
-                  alt="Detroid: Become Human"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Detroid: Become Human</h5>
-                  <p class="card-text">95% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FMy%20Child%20Lebensborn.webp?alt=media&token=fcbc59d7-74ef-412d-a177-0d284b3f87ed"
-                  class="card-img-top"
-                  alt="My Child Lebensborn"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">My Child Lebensborn</h5>
-                  <p class="card-text">96% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FBury%20Me%2C%20My%20Love.webp?alt=media&token=d5bd8cb5-3a87-4e0b-bc58-1758915d626a"
-                  class="card-img-top"
-                  alt="Bury Me, My Love"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Bury Me, My Love</h5>
-                  <p class="card-text">70% positivo en Steam</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FValiant%20Hearts.webp?alt=media&token=16693996-2e23-4986-aef8-9aa850e254cc"
-                  class="card-img-top"
-                  alt="Valiant Hearts: The Great War"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Valiant Hearts: The Great War</h5>
-                  <p class="card-text">95% positivo en Steam</p>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="bundle-info">
-              <h3>No hay que olvidar nuestro pasado</h3>
-              <p>
-                Saber nuestro pasado para evitar cometer los mismos errores en el futuro. Este pack busca reflejar las injusticias que hay en el mundo y mostrar los horrores de la guerra.
-              </p>
-              <div class="pricing-options">
-                <button class="btn btn-secondary" (click)="updatePrice(1)">
-                  1 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(4.61)">
-                  4,61 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(13.84)">
-                  13,84 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(25)">
-                  25 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(30)">
-                  30 €
-                </button>
-                <button class="btn btn-secondary" (click)="updatePrice(35)">
-                  35 €
-                </button>
-  
-                <input
-                  type="number"
-                  class="form-control"
-                  [(value)]="customPrice"
-                  placeholder="Otro importe"
-                  (input)="onCustomPriceChange($event)"
-                />
-              </div>
-              <button class="btn btn-primary">Realizar pedido</button>
-              <div class="countdown">
-                <h4>Tiempo restante para que acabe el box:</h4>
-                <div id="countdown-timer">
-                  <h2>{{ countdown }}</h2>
-                </div>
-              </div>
-              <div class="donation-info">
-                <h4>Organización benéfica</h4>
-                <p>
-                  Este box apoya a
-                  <a href="https://www.juegaterapia.org/">juegaterapia</a>.
-                </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>MIRROR BOX</h1>
+
+        <div class="row" id="game-list">
+          <div class="col-md-4" *ngFor="let game of displayedGames">
+            <div class="card">
+              <img [src]="game.img" class="card-img-top" [alt]="game.title" />
+              <div class="card-body">
+                <h5 class="card-title">{{ game.title }}</h5>
+                <p class="card-text">{{ game.rating }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="bundle-info">
+          <h3>No hay que olvidar nuestro pasado</h3>
+          <p>
+            Saber nuestro pasado para evitar cometer los mismos errores en el futuro. Este pack busca reflejar las injusticias que hay en el mundo y mostrar los horrores de la guerra.
+          </p>
+          <div class="pricing-options">
+            <button class="btn btn-secondary" (click)="filterGames(1)">
+              1 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(2)">
+              4,61 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(3)">
+              13,84 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(4)">
+              25 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(5)">
+              30 €
+            </button>
+            <button class="btn btn-secondary" (click)="filterGames(6)">
+              35 €
+            </button>
+
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="customPrice"
+              placeholder="Otro importe"
+              (input)="onCustomPriceChange($event)"
+            />
+          </div>
+          <button class="btn btn-primary">Realizar pedido</button>
+          <div class="countdown">
+            <h4>Tiempo restante para que acabe el box:</h4>
+            <div id="countdown-timer">
+              <h2>{{ countdown }}</h2>
+            </div>
+          </div>
+          <div class="donation-info">
+            <h4>Organización benéfica</h4>
+            <p>
+              Este box apoya a
+              <a href="https://www.juegaterapia.org/">juegaterapia</a>.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  
+  </div>
+</div>
