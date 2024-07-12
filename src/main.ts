@@ -3,6 +3,8 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { EmployeeListComponent } from './app/pages/employee-list/employee-list.component';
+import { Route, RouterLink } from '@angular/router';
+import { routes } from './app/app.routes';
 
 // import { CookieService } from 'ngx-cookie-service';
 // import { CookiesComponent } from './app/pages/cookies/cookies.component';
@@ -14,3 +16,4 @@ bootstrapApplication(AppComponent, appConfig).catch((err) =>
 bootstrapApplication(EmployeeListComponent, {
   providers: [provideHttpClient()],
 });
+bootstrapApplication(RouterLink);

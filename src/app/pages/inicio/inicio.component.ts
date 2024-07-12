@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule, Route, Router } from '@angular/router';
-
+import { RouterLink } from '@angular/router';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-inicio',
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  
   ngOnInit(): void {
     this.updateCountdowns();
     setInterval(() => this.updateCountdowns(), 1000);
@@ -17,12 +18,16 @@ export class InicioComponent implements OnInit {
   updateCountdowns() {
     const countdownElements = document.querySelectorAll('.countdown');
     countdownElements.forEach((countdown) => {
-      const endTime = new Date(countdown.getAttribute('data-end-time')!).getTime();
+      const endTime = new Date(
+        countdown.getAttribute('data-end-time')!
+      ).getTime();
       const now = new Date().getTime();
       const distance = endTime - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -52,7 +57,8 @@ export class InicioComponent implements OnInit {
     buttons.forEach((button) => {
       if (
         button.textContent?.toLowerCase() === category ||
-        (category === 'all' && button.textContent?.toLowerCase() === 'todos los boxes')
+        (category === 'all' &&
+          button.textContent?.toLowerCase() === 'todos los boxes')
       ) {
         button.classList.add('active');
       } else {
