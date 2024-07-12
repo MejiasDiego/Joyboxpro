@@ -5,6 +5,30 @@
   min-height: calc(100vh - 110px);
 }
 
+.verBox {
+  background-color: #EC0909;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 0px;
+  text-transform: uppercase;
+  text-align: center; /* Asegura que el texto esté centrado */
+  display: inline-block; /* Asegura que el botón mantenga su formato */
+}
+
+.verBox a {
+  color: white;
+  text-decoration: none;
+}
+
+.verBox:hover {
+  background-color: rgb(190, 23, 23);
+  color: #EC0909;
+}
+
 .box {
   background-color: #555555;
   padding: 10px;
@@ -235,6 +259,7 @@
     font-size: 1.2em; /* Ajusta el tamaño de fuente del título */
   }
 }
+
 .filter-buttons {
   text-align: center; /* Alinea los botones al centro */
   margin-bottom: 10px;
@@ -244,10 +269,12 @@
   font-size: 0.7em; /* Ajusta el tamaño de fuente de los botones */
   padding: 5px 8px; /* Ajusta el padding de los botones */
 }
+
 .filter-buttons .btn {
   font-size: 0.8em; /* Ajusta el tamaño de fuente de los botones */
   padding: 5px; /* Reduce el padding de los botones */
 }
+
 .filter-buttons .btn {
   margin: 2px;
   padding: 5px 10px; /* Añade un padding más estrecho */
