@@ -10,7 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './pages/register/register.component';
 import { BoxDentroComponent } from './pages/boxdentroECOBOX/boxdentro.component';
 import { PagoComponent } from './pago/pago.component';
-import { CarritoComponent } from './carrito/carrito.component';
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 import { BoxdentroUNDERBOXComponent } from './pages/boxdentro-underbox/boxdentro-underbox.component';
 import { BoxdentroSPRINGBOXComponent } from './pages/boxdentro-springbox/boxdentro-springbox.component';

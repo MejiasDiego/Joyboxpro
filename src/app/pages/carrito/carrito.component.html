@@ -1,0 +1,49 @@
+<div class="container-custom">
+  <h2>Carrito de Compras</h2>
+  <table class="table table-custom">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="selectedBox">
+      <tr>
+        <td>
+          <img
+            [src]="selectedBox.img"
+            alt="{{ selectedBox.title }}"
+            class="product-img"
+          />
+        </td>
+        <td>{{ selectedBox.title }}</td>
+        <td>{{ selectedBox.price | currency : "EUR" }}</td>
+        <td>
+          <input
+            type="number"
+            class="quantity-input"
+            [(ngModel)]="quantity"
+            (change)="updateTotal()"
+            min="1"
+          />
+        </td>
+        <td>{{ selectedBox.price * quantity | currency : "EUR" }}</td>
+        <td>
+          <span class="delete-btn" (click)="clearCart()">Eliminar</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!selectedBox" class="empty-cart-msg">
+    <p>Tu carrito está vacío</p>
+  </div>
+  <div *ngIf="selectedBox" class="checkout-btn-container">
+    <button class="btn checkout-btn" (click)="checkout()">
+      Proceder al pago
+    </button>
+  </div>
+</div>
