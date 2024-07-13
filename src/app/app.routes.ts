@@ -18,8 +18,8 @@ import { BoxDentroCHILLBOXComponent } from './pages/boxdentro-chillbox/boxdentro
 import { BoxDentroJAVABOXComponent } from './pages/boxdentro-javabox/boxdentro-javabox.component';
 import { BoxDentroMIRRORBOXComponent } from './pages/boxdentro-mirrorbox/boxdentro-mirrorbox.component';
 import { BoxdentroPEACEBOXComponent } from './pages/boxdentro-peacebox/boxdentro-peacebox.component';
-import { BoxdentroNETComponent } from './pages/boxdentro-net/boxdentro-net.component';
 import { BoxNeutralProComponent } from './pages/boxdentroneutralboxpro/boxdentroneutralboxpro.component';
+import { BoxDentroNETComponent } from './pages/boxdentro-net/boxdentro-net.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -36,8 +36,8 @@ export const routes: Routes = [
   { path: 'peacebox', component: BoxdentroPEACEBOXComponent },
   { path: 'javabox', component: BoxDentroJAVABOXComponent },
   { path: 'underbox', component: BoxdentroUNDERBOXComponent },
+  { path: 'netbox', component: BoxDentroNETComponent },
   { path: 'springbox', component: BoxdentroSPRINGBOXComponent },
-  { path: 'netbox', component: BoxdentroNETComponent },
   { path: 'neutralbox', component: BoxNeutralProComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'pago', component: PagoComponent },

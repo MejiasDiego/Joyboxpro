@@ -66,16 +66,16 @@ body {
   align-items: center; /* Centra verticalmente el logo */
   justify-content: center; /* Centra horizontalmente el logo */
   height: 50px; /* Ajusta la altura del contenedor del logo */
-  width: 169px; /* Ajusta el ancho del contenedor del logo */
+  width: 183px; /* Ajusta el ancho del contenedor del logo */
   overflow: hidden; /* Oculta el desbordamiento */
   position: relative; /* Añade posicionamiento relativo */
 }
 
 .navbar-brand .logo-wrapper img {
-  height: 180px; /* Ajusta la altura del logo según sea necesario */
-  width: auto; /* Mantiene la proporción del logo */
+  height: 160px; /* Ajusta la altura del logo según sea necesario */
+  width: 260px; /* Mantiene la proporción del logo */
   position: absolute; /* Posiciona la imagen absolutamente */
-  top: 50%; /* Centra verticalmente la imagen */
+  top: 0%; /* Centra verticalmente la imagen */
   left: 50%; /* Centra horizontalmente la imagen */
   transform: translate(-50%, -50%); /* Ajusta la posición de la imagen */
   transition: transform 0.3s ease-in-out; /* Añade la transición para la animación */

@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,6 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-peacebox.component.css'],
 })
 export class BoxdentroPEACEBOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'PEACE BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Peace_Box.jpg?alt=media&token=c12dd655-aeb3-4e6f-8544-844eefa02c7c', // Actualizar con la imagen correcta
+    price: 25,
+    description: 'Una selección de productos que inspiran la reconciliación, la armonía y la resolución de conflictos, ofreciendo recursos para promover el diálogo constructivo, la comprensión cultural y la cooperación global hacia un mundo más pacífico y sostenible.',
+  };
+
   games = [
     {
       title: 'Reigns',
@@ -88,5 +99,10 @@ export class BoxdentroPEACEBOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterGames(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

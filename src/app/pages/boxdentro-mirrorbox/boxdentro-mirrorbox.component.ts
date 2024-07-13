@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,6 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-mirrorbox.component.css'],
 })
 export class BoxDentroMIRRORBOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'MIRROR BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Mirror_Box.jpg?alt=media&token=18df8d46-443c-4ffd-bcd3-3d683cc97e7b', // Actualizar con la imagen correcta
+    price: 25,
+    description: 'Saber nuestro pasado para evitar cometer los mismos errores en el futuro. Este pack busca reflejar las injusticias que hay en el mundo y mostrar los horrores de la guerra.',
+  };
+
   games = [
     {
       title: 'Papers, Please',
@@ -88,5 +99,10 @@ export class BoxDentroMIRRORBOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterGames(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

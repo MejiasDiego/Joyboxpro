@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>MIRROR BOX</h1>
+        <h1>{{ box.title }}</h1>
 
         <div class="row" id="game-list">
           <div class="col-md-4" *ngFor="let game of displayedGames">
@@ -19,9 +19,7 @@
       <div class="col-md-4">
         <div class="bundle-info">
           <h3>No hay que olvidar nuestro pasado</h3>
-          <p>
-            Saber nuestro pasado para evitar cometer los mismos errores en el futuro. Este pack busca reflejar las injusticias que hay en el mundo y mostrar los horrores de la guerra.
-          </p>
+          <p>{{ box.description }}</p>
           <div class="pricing-options">
             <button class="btn btn-secondary" (click)="filterGames(1)">
               1 €
@@ -50,7 +48,7 @@
               (input)="onCustomPriceChange($event)"
             />
           </div>
-          <button class="btn btn-primary">Realizar pedido</button>
+          <button class="btn btn-primary" (click)="addToCart(box)">Realizar pedido</button>
           <div class="countdown">
             <h4>Tiempo restante para que acabe el box:</h4>
             <div id="countdown-timer">

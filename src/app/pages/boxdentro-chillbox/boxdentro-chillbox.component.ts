@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,6 +12,16 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-chillbox.component.css'],
 })
 export class BoxDentroCHILLBOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'CHILL BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Chill_Box.jpg?alt=media&token=8b7a68a9-b870-4956-8262-897a0a790271', // Actualizar con la imagen correcta
+    price: 25,
+    description:
+      'Relájate con este box, diseñado para la relajación y la introspección, con juegos que ofrecen experiencias tranquilas y meditativas.',
+  };
+
   games = [
     {
       title: 'Journey',
@@ -85,5 +97,10 @@ export class BoxDentroCHILLBOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterCards(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

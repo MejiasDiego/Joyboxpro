@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>JAVA BOX</h1>
+        <h1>{{ box.title }}</h1>
 
         <div class="row" id="book-list">
           <div class="col-md-4" *ngFor="let book of displayedBooks">
@@ -19,9 +19,7 @@
       <div class="col-md-4">
         <div class="bundle-info">
           <h3>Aprende a programar Java</h3>
-          <p>
-            En este box podrás aprender todo sobre Java y aprenderás a programar.
-          </p>
+          <p>{{ box.description }}</p>
           <div class="pricing-options">
             <button class="btn btn-secondary" (click)="filterBooks(1)">
               1 €
@@ -50,7 +48,7 @@
               (input)="onCustomPriceChange($event)"
             />
           </div>
-          <button class="btn btn-primary">Realizar pedido</button>
+          <button class="btn btn-primary" (click)="addToCart(box)">Realizar pedido</button>
           <div class="countdown">
             <h4>Tiempo restante para que acabe el box:</h4>
             <div id="countdown-timer">

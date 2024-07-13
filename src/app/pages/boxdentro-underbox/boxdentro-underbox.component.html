@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>UNDER BOX</h1>
+        <h1>{{ box.title }}</h1>
         <div class="row" id="game-list">
           <div class="col-md-4" *ngFor="let game of displayedGames">
             <div class="card">
@@ -18,9 +18,7 @@
       <div class="col-md-4">
         <div class="bundle-info">
           <h3>La vida marina la vida mejor</h3>
-          <p>
-            Una colección de juegos inspirados en la vida marina, seleccionados para divertir y educar sobre la importancia de la conservación marina.
-          </p>
+          <p>{{ box.description }}</p>
           <div class="pricing-options">
             <button class="btn btn-secondary" (click)="filterGames(1)">
               1 €
@@ -48,11 +46,22 @@
               (input)="onCustomPriceChange($event)"
             />
           </div>
-          <button class="btn btn-primary">Realizar pedido</button>
+          <button class="btn btn-primary" (click)="addToCart(box)">Realizar pedido</button>
           <div class="countdown">
             <h4>Tiempo restante para que acabe el box:</h4>
             <div id="countdown-timer">
               <h2>{{ countdown }}</h2>
             </div>
           </div>
-         
+          <div class="donation-info">
+            <h4>Organización benéfica</h4>
+            <p>
+              Este box apoya a
+              <a href="https://www.juegaterapia.org/">juegaterapia</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

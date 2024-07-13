@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -9,7 +11,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './boxdentro-net.component.html',
   styleUrls: ['./boxdentro-net.component.css'],
 })
-export class BoxdentroNETComponent implements OnInit {
+export class BoxDentroNETComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'NET BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/.NETBOX.jpg?alt=media&token=facb12a4-2c4e-40ca-af20-158fb89971f4', // Actualizar con la imagen correcta
+    price: 25,
+    description: 'Todo lo que necesitas para dominar el desarrollo en el ecosistema de Microsoft, desde fundamentos hasta técnicas avanzadas.',
+  };
+
   books = [
     {
       title: 'Building Applications with Spring 5 and Vue.js 2',
@@ -88,5 +99,10 @@ export class BoxdentroNETComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterBooks(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

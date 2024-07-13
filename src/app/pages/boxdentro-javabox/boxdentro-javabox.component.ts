@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,6 +12,16 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-javabox.component.css'],
 })
 export class BoxDentroJAVABOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'JAVA BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/JAVABOX.jpg?alt=media&token=34140d55-e10c-4264-896b-6940bef13f1a', // Actualizar con la imagen correcta
+    price: 25,
+    description:
+      'En este box podrás aprender todo sobre Java y aprenderás a programar.',
+  };
+
   books = [
     {
       title: '3D Programming in Java',
@@ -88,5 +100,10 @@ export class BoxDentroJAVABOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterBooks(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

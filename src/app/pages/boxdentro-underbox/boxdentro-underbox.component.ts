@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,6 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-underbox.component.css'],
 })
 export class BoxdentroUNDERBOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'UNDER BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Under_Box.jpg?alt=media&token=exampletoken', // Actualizar con la imagen correcta
+    price: 25,
+    description: 'Una colección de juegos inspirados en la vida marina, seleccionados para divertir y educar sobre la importancia de la conservación marina.',
+  };
+
   games = [
     {
       title: 'Subnautica',
@@ -87,5 +98,10 @@ export class BoxdentroUNDERBOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterGames(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }

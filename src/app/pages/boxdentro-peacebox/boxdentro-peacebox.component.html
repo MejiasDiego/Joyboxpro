@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>PEACE BOX</h1>  
+        <h1>{{ box.title }}</h1>  
         <div class="row" id="game-list">
           <div class="col-md-4" *ngFor="let game of displayedGames">
             <div class="card">
@@ -18,9 +18,7 @@
       <div class="col-md-4">
         <div class="bundle-info">
           <h3>Por la paz</h3>
-          <p>
-            Una selección de productos que inspiran la reconciliación, la armonía y la resolución de conflictos, ofreciendo recursos para promover el diálogo constructivo, la comprensión cultural y la cooperación global hacia un mundo más pacífico y sostenible.
-          </p>
+          <p>{{ box.description }}</p>
           <div class="pricing-options">
             <button class="btn btn-secondary" (click)="filterGames(1)">
               1 €
@@ -49,7 +47,7 @@
               (input)="onCustomPriceChange($event)"
             />
           </div>
-          <button class="btn btn-primary">Realizar pedido</button>
+          <button class="btn btn-primary" (click)="addToCart(box)">Realizar pedido</button>
           <div class="countdown">
             <h4>Tiempo restante para que acabe el box:</h4>
             <div id="countdown-timer">

@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   standalone: true,
@@ -10,20 +12,29 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./boxdentro-springbox.component.css'],
 })
 export class BoxdentroSPRINGBOXComponent implements OnInit {
+  constructor(private carritoService: CarritoService, private router: Router) {}
+
+  box = {
+    title: 'SPRING BOX',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/SPRINGBOX.jpg?alt=media&token=0c156ba8-fbf0-47fb-bdc4-793982008bbf', // Actualizar con la imagen correcta
+    price: 25,
+    description: 'Recursos esenciales que cubren desde los conceptos fundamentales hasta técnicas avanzadas de desarrollo, proporcionando guías prácticas, ejemplos detallados y estrategias efectivas para dominar Spring.',
+  };
+
   games = [
     {
       title: 'Building Applications with Spring 5 and Vue.js 2',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=01de4dc6-df16-4f55-85a0-5f587b62ea63',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FBuilding%20Applications%20with%20Spring%205%20and%20Vue.js%202.jpg?alt=media&token=5b40134b-e19e-4a5a-bc28-b59583438241',
       rating: '3/5 Goodreads'
     },
     {
       title: 'Software Architecture with Spring 5.0',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSoftware%20Architecture%20with%20Spring%205.0.jpg?alt=media&token=5c28924d-4bd4-4913-a961-668f9f7f5128',
       rating: '4/5 Goodreads'
     },
     {
       title: 'Spring Framework Cookbook: Hot Recipes for Spring Framework',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2Fspring%20hot%20recipes.png?alt=media&token=df88b999-4714-43c2-b10f-980310b876e6',
       rating: '4/5 Goodreads'
     },
     {
@@ -33,12 +44,12 @@ export class BoxdentroSPRINGBOXComponent implements OnInit {
     },
     {
       title: 'Spring Framework Reference Documentation',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FCoffe%20Talk.webp?alt=media&token=982c0996-bf73-44c5-86cc-eff56e9155f1',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSpring%20Framework%20Reference%20Documentation.jpg?alt=media&token=d852c9a8-1a19-492b-978d-82d411176c9c',
       rating: '4/5 Goodreads'
     },
     {
       title: 'Spring Boot Reference Guide',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FJusant.webp?alt=media&token=5d2b518d-87e1-41ef-9dec-c2fcdb65f1ff',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSpring%20Boot%20Reference%20Guide.jpg?alt=media&token=7251aebb-40a6-4b7f-a8d8-7e343631b8f9',
       rating: '4/5 Goodreads'
     },
   ];
@@ -87,5 +98,10 @@ export class BoxdentroSPRINGBOXComponent implements OnInit {
   onCustomPriceChange(event: any) {
     this.customPrice = event.target.value;
     this.filterGames(this.customPrice);
+  }
+
+  addToCart(box: any) {
+    this.carritoService.selectBox(box);
+    this.router.navigate(['/carrito']);
   }
 }
