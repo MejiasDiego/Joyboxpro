@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-box',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,RouterModule],
   templateUrl: './box.component.html',
   styleUrl: './box.component.css',
 })
