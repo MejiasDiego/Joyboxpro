@@ -27,7 +27,21 @@ app.post("/api/process-payment", (req, res) => {
     from: process.env.EMAIL_USER, // Cambia esto a tu correo
     to: "diegones64@gmail.com", // Cambia esto al correo del cliente
     subject: "Confirmación de Compra",
-    text: `Gracias por tu compra. Aquí están los detalles de tu pedido:\n\nProducto: ${box.title}\nCantidad: ${quantity}\nTotal: €${box.price * quantity}\n\nDirección de Envío: ${paymentInfo.address}`,
+    text: `Gracias por tu compra. Aquí están los detalles de tu pedido:
+
+Producto: ${box.title}
+Cantidad: ${quantity}
+Total: €${box.price * quantity}
+
+KEYS ECO BOX:
+Stardew Valley: 4F67J-87L9K-Q4J2L-7N8D2-H4K9P
+Firewatch: 3R6J2-98M4K-Q2N1L-4B7X8-H6M3P
+Farming Simulator: 5H7P3-56K2M-QR8N3-L9J4V-H2P9N
+Unravel: 6K2J1-78M9K-Q5N2L-8R4J7-H3N6P
+The Forest: 7N8J4-43K2L-Q6N5J-2M7B9-H4K5P
+Maneater: 8J4K5-23L6M-Q7N3L-5R8J2-H9M1P
+
+Gracias por apostar por nosotros y ayudar a mejorar el mundo!`,
   };
 
   // Envía el correo

@@ -1,8 +1,6 @@
 .container-custom {
   background-color: #4b4b4b;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
+  padding: 180px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -31,7 +29,7 @@
 }
 
 .delete-btn {
-  color: #ec0909;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -46,7 +44,6 @@
 
 .checkout-btn {
   background-color: #ec0909;
-  border-color: #ec0909;
   color: #ffffff;
   font-weight: bold;
   border-radius: 20px;
@@ -55,8 +52,7 @@
 }
 
 .checkout-btn:hover {
-  background-color: #ff0a29;
-  border-color: #ff0a29;
+  background-color: #c60f28;
 }
 
 .empty-cart-msg {
@@ -71,7 +67,10 @@
   object-fit: cover;
   border-radius: 10px;
 }
+h2{
+  color: #ffffff;
 
+}
 .quantity-input {
   width: 60px;
   text-align: center;
@@ -85,4 +84,10 @@
   outline: none;
   border-color: #ec0909;
   box-shadow: 0 0 5px rgba(236, 9, 9, 0.5);
+}
+.payment-form {
+  color: #ffffff;
+  justify-content: center;
+  font-display: block;
+  margin-top: 20px;
 }
