@@ -42,8 +42,56 @@
     <p>Tu carrito está vacío</p>
   </div>
   <div *ngIf="selectedBox" class="checkout-btn-container">
-    <button class="btn checkout-btn" (click)="checkout()">
+    <button class="btn checkout-btn" (click)="showPaymentForm = true">
       Proceder al pago
     </button>
+  </div>
+
+  <!-- Formulario de Pago Simulado -->
+  <div *ngIf="showPaymentForm" class="payment-form">
+    <h3>Formulario de Pago</h3>
+    <form (submit)="submitPayment($event)">
+      <div class="form-group">
+        <label for="cardNumber">Número de Tarjeta</label>
+        <input
+          type="text"
+          id="cardNumber"
+          [(ngModel)]="paymentInfo.cardNumber"
+          name="cardNumber"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Fecha de Expiración</label>
+        <input
+          type="text"
+          id="expiryDate"
+          [(ngModel)]="paymentInfo.expiryDate"
+          name="expiryDate"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input
+          type="text"
+          id="cvv"
+          [(ngModel)]="paymentInfo.cvv"
+          name="cvv"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo electrónico:</label>
+        <input
+          type="text"
+          id="correo"
+          [(ngModel)]="paymentInfo.correo"
+          name="correo"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Pagar</button>
+    </form>
   </div>
 </div>
