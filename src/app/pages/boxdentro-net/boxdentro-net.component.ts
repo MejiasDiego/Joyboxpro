@@ -23,33 +23,33 @@ export class BoxDentroNETComponent implements OnInit {
 
   books = [
     {
-      title: 'Building Applications with Spring 5 and Vue.js 2',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FBuilding%20Applications%20with%20Spring%205%20and%20Vue.js%202.jpg?alt=media&token=5b40134b-e19e-4a5a-bc28-b59583438241',
+      title: 'Akka.NET Succinctly',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FLibro5.png?alt=media&token=bd75e4f8-0a28-4943-9443-30559dc2ff42',
       rating: '3/5 Goodreads'
     },
     {
-      title: 'Software Architecture with Spring 5.0',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSoftware%20Architecture%20with%20Spring%205.0.jpg?alt=media&token=5c28924d-4bd4-4913-a961-668f9f7f5128',
+      title: 'Application Security in .NET Succinctly',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FLibro4.png?alt=media&token=88012752-1ba2-44ba-893b-fc882c56c9e5',
       rating: '4/5 Goodreads'
     },
     {
-      title: 'Spring Framework Cookbook: Hot Recipes for Spring Framework',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2Fspring%20hot%20recipes.png?alt=media&token=ef79ea6c-7d03-45b6-acec-5c4eba6bff66',
+      title: 'Entity Framework Notes for Professionals',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FLibro3.png?alt=media&token=88c9e4da-cca7-4eba-a956-2541d5260449',
       rating: '4/5 Goodreads'
     },
     {
-      title: 'Spring Framework Notes for Professionals',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSpring%20Framework%20Notes%20for%20Professionals.jpg?alt=media&token=64f96f91-bbbb-4b8b-9bec-5637110648f3',
+      title: '.NET for Visual FoxPro Developers',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2F.NET%20for%20Visual%20FoxPro%20Developers.jpg?alt=media&token=5697bcdc-060f-492f-a8a7-50207fd92754',
       rating: '5/5 Goodreads'
     },
     {
-      title: 'Spring Framework Reference Documentation',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSpring%20Framework%20Reference%20Documentation.jpg?alt=media&token=d852c9a8-1a19-492b-978d-82d411176c9c',
+      title: 'Under the Hood of .NET Memory Management',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FLibro2.png?alt=media&token=061ab12c-7162-43dc-950e-5e02118c3b93',
       rating: '4/5 Goodreads'
     },
     {
-      title: 'Spring Boot Reference Guide',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FSpring%20Boot%20Reference%20Guide.jpg?alt=media&token=7251aebb-40a6-4b7f-a8d8-7e343631b8f9',
+      title: '.NET Performance Testing and Optimization - The Complete Guide',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Libros%20Articulos%2FLibro1.png?alt=media&token=18505eae-87d7-491a-9ed0-05d3e660c15e',
       rating: '4/5 Goodreads'
     },
   ];

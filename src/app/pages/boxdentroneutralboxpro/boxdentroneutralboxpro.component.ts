@@ -24,32 +24,32 @@ export class BoxNeutralProComponent implements OnInit {
   games = [
     {
       title: 'Life is Strange 3: True Colours',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=01de4dc6-df16-4f55-85a0-5f587b62ea63',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Flife%20is%20strange%203.jpg?alt=media&token=bce17fc6-00d2-41d0-934a-b30c6aa1a652',
       rating: '70% positivo en Steam',
     },
     {
       title: 'Tell Me Why',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Ftell%20me%20why.jpg?alt=media&token=14b8f7ea-1cd0-4681-8fa5-0ed91b9c10ef',
       rating: '90% positivo en Steam',
     },
     {
       title: 'Gone Home',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fgone%20home.jpg?alt=media&token=617f5169-768a-406b-9fd0-9e4166d33e50',
       rating: '77% positivo en Steam',
     },
     {
       title: 'Celeste',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUnpacking.webp?alt=media&token=73baadb6-d5f5-4a71-accf-c22f9f2a2e29',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fceleste.webp?alt=media&token=75789dba-24fb-4021-8d91-fd6a2cf2d69f',
       rating: '97% positivo en Steam',
     },
     {
       title: 'Undertale',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FCoffe%20Talk.webp?alt=media&token=982c0996-bf73-44c5-86cc-eff56e9155f1',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUndertale.webp?alt=media&token=5055cd8d-ee7e-419d-9912-4b1688c812cc',
       rating: '96% positivo en Steam',
     },
     {
       title: 'The Outer Worlds',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FJusant.webp?alt=media&token=5d2b518d-87e1-41ef-9dec-c2fcdb65f1ff',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fthe%20outer%20worlds.jpg?alt=media&token=c5cafb9d-a54d-4df4-87df-73d0135379e5',
       rating: '84% positivo en Steam',
     },
   ];

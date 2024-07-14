@@ -24,32 +24,32 @@ export class BoxdentroUNDERBOXComponent implements OnInit {
   games = [
     {
       title: 'Subnautica',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=01de4dc6-df16-4f55-85a0-5f587b62ea63',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fsubnautica.webp?alt=media&token=90522ffa-e0e4-45a8-a382-07f10380a8bb',
       rating: '96% positivo en Steam'
     },
     {
       title: 'Abzü',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FAbz%C3%BC.webp?alt=media&token=ab5c187e-a3fc-415f-b2fc-b99ccb59c0ad',
       rating: '96% positivo en Steam'
     },
     {
       title: 'BioShock',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FBioShock%20Bien.jpg?alt=media&token=3610f7f5-f782-4c68-a197-a415c1dff2a7',
       rating: '96% positivo en Steam'
     },
     {
       title: 'Dave the Diver',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUnpacking.webp?alt=media&token=73baadb6-d5f5-4a71-accf-c22f9f2a2e29',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDave%20the%20diver.jpg?alt=media&token=e7cadbbb-0b73-4480-989e-aa25dc09f201',
       rating: '96% positivo en Steam'
     },
     {
       title: 'Another Crab\'s Treasure',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FCoffe%20Talk.webp?alt=media&token=982c0996-bf73-44c5-86cc-eff56e9155f1',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Fanother-crabs-treasure-r-blogroll-1713906805542.jpg?alt=media&token=49e86106-3bcc-4b38-a5d7-39bc4c3fdd8f',
       rating: '96% positivo en Steam'
     },
     {
       title: 'Raft',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FJusant.webp?alt=media&token=5d2b518d-87e1-41ef-9dec-c2fcdb65f1ff',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FRaft.webp?alt=media&token=68477532-41e2-4157-bf26-48050fcbb7b6',
       rating: '96% positivo en Steam'
     },
   ];
