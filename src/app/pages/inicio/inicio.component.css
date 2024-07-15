@@ -4,7 +4,6 @@ body {
   padding-top: 70px; /* Asegura que el contenido no quede cubierto por el header */
   overflow-x: hidden; /* Para evitar la barra de scroll horizontal */
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header{
@@ -167,7 +166,7 @@ h1 {
 }
 
 .verBox:hover {
-  background-color: rgb(190, 23, 23);
+  background-color: #be1717;
   color: #EC0909;
 }
 

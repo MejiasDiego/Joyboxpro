@@ -1,6 +1,6 @@
 <div class="contenedorPadre">
   <div *ngIf="authService.isLoggedIn() === false" class="container">
-    <h2>Login</h2>
+    <h2>LOGIN</h2>
     <form (ngSubmit)="login()">
       <input
         [(ngModel)]="username"
@@ -18,8 +18,7 @@
         required
       />
       <button type="submit">Iniciar sesión</button>
-    </form>
-    <hr />
+    </form> <br>
     <p>Si no tienes usuario:</p>
     <button><a routerLink="/register">Regístrate</a></button>
   </div>

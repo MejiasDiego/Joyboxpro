@@ -1,12 +1,16 @@
+.parent {  background-color: #4b4b4b;
+  padding: 180px;
+}
+
 .container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 2px solid hsl(0, 0%, 100%);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-bottom: 170px;
   }
   input {
@@ -20,14 +24,14 @@
     width: calc(100% - 10px);
     padding: 10px;
     margin: 10px;
-    background-color: #1d8acb;
+    background-color: #ec0909;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   button:hover {
-    background-color: #096da7;
+    background-color: #be1717;
   }
   
   a {
@@ -35,12 +39,6 @@
     color: white;
   }
   
-  input,
-  p,
-  button,
-  h1, h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
   
   input,
   p,
@@ -48,8 +46,9 @@
     font-size: 18px;
   }
 
-  h1 {
+  h1,h2,h3,h4,h5,h6,p{
     text-align: center;
+    color: white;
   }
 
   
