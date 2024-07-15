@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Router } from 'express';
 
+
 @Component({
   selector: 'app-inicio',
   standalone: true,

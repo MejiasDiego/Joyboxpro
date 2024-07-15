@@ -1,23 +1,27 @@
 <div class="parent">
-<div class="container">
-  <h2>REGISTRO</h2>
-  <form (ngSubmit)="register()">
-    <input
-      [(ngModel)]="username"
-      name="username"
-      placeholder="Nombre de usuario"
-      required
-    />
-    <input
-      [(ngModel)]="password"
-      name="password"
-      type="password"
-      placeholder="Contraseña"
-      required
-    />
-    <button type="submit">Registrar</button>
-  </form>
-  <hr>
-  <p>Si ya tienes usuario:</p>
-  <button><a routerLink="/login">Inicia tu sesión</a></button>
-</div></div>
+  <div class="container animated-container">
+    <h2 class="animated-title">REGISTRO</h2>
+    <form (ngSubmit)="register()" class="animated-form">
+      <input
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Nombre de usuario"
+        required
+        class="animated-input"
+      />
+      <input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        placeholder="Contraseña"
+        required
+        class="animated-input"
+      />
+      <button type="submit" class="animated-button">Registrar</button>
+    </form>
+    <hr class="animated-hr">
+    <p class="animated-text">Si ya tienes usuario:</p>
+    <button class="animated-button"><a routerLink="/login">Inicia tu sesión</a></button>
+  </div>
+</div>
+  

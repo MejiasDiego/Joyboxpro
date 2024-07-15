@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { BoxComponent } from './pages/box/box.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
@@ -20,6 +19,7 @@ import { BoxDentroMIRRORBOXComponent } from './pages/boxdentro-mirrorbox/boxdent
 import { BoxdentroPEACEBOXComponent } from './pages/boxdentro-peacebox/boxdentro-peacebox.component';
 import { BoxNeutralProComponent } from './pages/boxdentroneutralboxpro/boxdentroneutralboxpro.component';
 import { BoxDentroNETComponent } from './pages/boxdentro-net/boxdentro-net.component';
+import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },

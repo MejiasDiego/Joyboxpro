@@ -1,60 +1,59 @@
-.container-custom {
-  background-color: #4b4b4b;
-  padding: 20px;
-  color: #ffffff;
-  min-height: calc(100vh - 110px);
-}
-.header{  
-  text-align: center;
-  margin-top: 125px;
+.fade-in-zoom {
+  animation: fadeInZoom 1.5s ease-in-out;
 }
 
-.parrafo p{
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: #6a6a6a;
+  color: #ffffff;
+  padding-top: 70px; /* Asegura que el contenido no quede cubierto por el header */
+  overflow-x: hidden; /* Para evitar la barra de scroll horizontal */
+  margin: 0;
+}
+
+.header {
+  margin-top: -60px;
+}
+
+.parrafo p {
   font-size: 1.5em;
 }
 
-.verBox {
-  background-color: #EC0909;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 20px;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-top: 0px;
-  text-transform: uppercase;
-  text-align: center; /* Asegura que el texto esté centrado */
-  display: inline-block; /* Asegura que el botón mantenga su formato */
-}
-
-.verBox a {
-  color: white;
-  text-decoration: none;
-}
-
-.verBox:hover {
-  background-color: rgb(190, 23, 23);
-  color: #EC0909;
-}
-
-.box {
-  background-color: #555555;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 350px; /* Aumentado el ancho máximo */
-}
-
-.box img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: opacity 0.5s ease;
-  border-radius: 10px; /* Imágenes redondeadas */
+.container-custom {
+  margin-top: 90px;
+  background-color: #4b4b4b;
+  padding: 20px;
+  color: #ffffff;
+  min-height: calc(100vh - 110px); /* Ajusta la altura mínima del contenido */
 }
 
 .box .game-names {
@@ -87,189 +86,9 @@
   border-radius: 5px;
 }
 
-.feedback {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.feedback img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px; /* Imágenes redondeadas */
-}
-
-.bottom-section {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1.5em;
-}
-
-.row p {
-  font-size: 1.1em; /* Incrementa el tamaño de fuente del texto */
-  line-height: 1.5em; /* Incrementa el interlineado */
-}
-
-.text-container {
-  max-width: 60%; /* Ajusta el ancho del contenedor de texto */
-  text-align: justify; /* Justifica el texto */
-}
-
-.image-container {
-  max-width: 40%; /* Ajusta el ancho del contenedor de imagen */
-}
-
-.promo-text {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.promo-text h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.promo-button {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.toggle-button {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1.2em;
+.intro-text {
   color: #ffffff;
-}
-
-.toggle-button .arrow {
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.hidden-text {
-  display: none;
-  margin-top: 20px;
-  font-size: 1em;
-  color: #ffffff;
-  text-align: justify; /* Justifica el texto */
-  margin-left: 100px; /* Ajusta este valor para mover el texto a la derecha */
-  width: 70%; /* Ajusta el ancho del contenedor de texto */
-}
-
-.expandable-content {
-  display: none;
-  margin-top: 20px;
-  font-size: 1em;
-  color: #ffffff;
-}
-
-.expanded .expandable-content {
-  display: block;
-}
-
-.header-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center; /* Puedes cambiarlo a 'center' o 'right' según prefieras */
-  
-}
-
-.texto-derecha {
-  text-align: center;
-} 
-
-/* Media Queries para Responsividad */
-@media (max-width: 1200px) {
-  .text-container {
-    max-width: 100%; /* Ajusta el ancho del contenedor de texto */
-  }
-
-  .image-container {
-    max-width: 100%; /* Ajusta el ancho del contenedor de imagen */
-  }
-
-  .hidden-text,
-  .header-title,
-  .texto-derecha {
-    margin-left: 0; /* Eliminar el margen izquierdo en pantallas más pequeñas */
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-custom {
-    margin-top: 70px; /* Ajusta el margen superior en pantallas más pequeñas */
-  }
-
-  .box,
-  .main-image-box {
-    height: auto; /* Permitir que la altura se ajuste automáticamente */
-  }
-
-  .highlight,
-  .highlight-right {
-    display: none; /* Ocultar los botones de cambio de imagen en pantallas pequeñas */
-  }
-
-  .row p {
-    font-size: 1em; /* Reduce el tamaño de fuente del texto */
-    line-height: 1.4em; /* Reduce el interlineado */
-  }
-
-  .promo-text h1 {
-    font-size: 1.5em; /* Reduce el tamaño de fuente del título */
-  }
-
-  .promo-button {
-    text-align: center; /* Centrar el botón */
-  }
-
-  .toggle-button {
-    justify-content: center; /* Centrar el botón de alternar */
-  }
-
-  .header-title {
-    text-align: center; /* Centrar el título en pantallas pequeñas */
-    margin-left: 0; /* Eliminar el margen izquierdo */
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar-brand {
-    font-size: 20px; /* Reduce el tamaño de fuente del logotipo */
-  }
-
-  .navbar-nav .nav-link,
-  .btn {
-    font-size: 0.8em; /* Reduce el tamaño de fuente de los enlaces */
-    padding: 5px 10px; /* Reduce el padding de los enlaces */
-  }
-
-  .countdown {
-    font-size: 1em; /* Ajusta el tamaño de fuente del contador */
-    padding: 8px; /* Ajusta el padding del contador */
-  }
-
-  .bottom-section {
-    font-size: 1.2em; /* Ajusta el tamaño de fuente de la sección inferior */
-  }
-
-  .row p {
-    font-size: 0.9em; /* Ajusta el tamaño de fuente del texto */
-    line-height: 1.3em; /* Ajusta el interlineado */
-  }
-
-  .promo-text h1 {
-    font-size: 1.2em; /* Ajusta el tamaño de fuente del título */
-  }
-}
-
-.filter-buttons {
-  text-align: center; /* Alinea los botones al centro */
-  margin-bottom: 10px;
+  text-align: justify;
 }
 
 .filter-buttons .btn {
@@ -291,4 +110,158 @@
 .filter-buttons .btn.active {
   background-color: #ffffff;
   color: #2c2c2c;
+}
+
+.box {
+  background-color: #555555;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px; /* Aumentado el ancho máximo */
+}
+
+.box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease;
+  border-radius: 10px; /* Imágenes redondeadas */
+}
+
+.inner-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+  transition: opacity 0.5s ease-in-out; /* Transición de opacidad */
+  position: absolute; /* Posicionar absolutamente para la transición */
+}
+
+.inner-content img.hidden {
+  opacity: 0; /* Ocultar la imagen con opacidad 0 */
+}
+
+h1 {
+  text-align: center;
+}
+
+.content-wrapper {
+  margin-left: 10px; /* Ajustar el margen izquierdo */
+  margin-right: 10px; /* Ajustar el margen derecho */
+}
+
+/* Estilos para el contenedor inspirado en Humble Bundle */
+
+.humble-bundle-container {
+  background-image: url('/assets/img/background.jpg'); /* Asegúrate de tener una imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+.humble-bundle-container .content {
+  background: url('https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/imagen%20de%20fondo%20unete%20ahora!.jpg?alt=media&token=e21dfe70-23a2-43c5-889e-6616a42e233f') no-repeat center center;
+  background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.texto-derecha {
+  text-align: center;
+}
+
+.verBox {
+  background-color: #EC0909;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 0px;
+  text-transform: uppercase;
+  text-align: center; /* Asegura que el texto esté centrado */
+  display: inline-block; /* Asegura que el botón mantenga su formato */
+}
+
+.verBox a {
+  color: white;
+  text-decoration: none;
+}
+
+.verBox:hover {
+  background-color: #be1717;
+  color: #EC0909;
+}
+
+.humble-bundle-container ul li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.humble-bundle-container button {
+  background-color: #EC0909;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.humble-bundle-container button:hover {
+  background-color: #a01010;
+}
+
+.humble-bundle-container button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+  .content-wrapper {
+    margin-left: 0; /* Eliminar el margen izquierdo en pantallas más pequeñas */
+    margin-right: 0; /* Eliminar el margen derecho en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    margin-top: 70px; /* Ajusta el margen superior en pantallas más pequeñas */
+  }
+
+  .box,
+  .main-image-box {
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+  }
+
+  .highlight,
+  .highlight-right {
+    display: none; /* Ocultar los botones de cambio de imagen en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .container-custom {
+    margin-top: 50px; /* Ajusta el margen superior en pantallas más pequeñas */
+  }
 }

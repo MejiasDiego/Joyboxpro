@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-404',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterModule],
   templateUrl: './pagina-404.component.html',
-  styles: `
-    *{
-      text-align:center;
-    }
-  `
+  styleUrl: './pagina-404.component.css',
 })
-export class Pagina404Component {
-
-}
+export class Pagina404Component {}
