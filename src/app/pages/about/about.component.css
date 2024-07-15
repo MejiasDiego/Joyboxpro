@@ -4,12 +4,15 @@ body {
   padding-top: 70px;
   overflow-x: hidden; /* Para evitar la barra de scroll horizontal */
 }
-
+p {
+  font-size: 1.5em;
+}
 .quienesomos {
   margin-top: 100px;
 }
 
 .container-custom {
+  margin-top: -20px;
   background-color: #4b4b4b;
   padding: 20px;
   color: #ffffff;
@@ -40,7 +43,7 @@ h1 {
 .main-image {
   width: 100%;
   max-width: 800px; /* Aumentar el tamaño máximo del logo */
-  margin: 80px auto; /* Reducir el espacio entre el texto y la imagen */
+  margin: -20px auto; /* Reducir el espacio entre el texto y la imagen */
   display: block;
   animation: zoomIn 1.5s ease-in-out; /* Añadir animación */
 }
@@ -51,7 +54,6 @@ h1 {
   color: #ffffff;
   text-align: center;
   position: relative;
-  margin: 10px 0;
   width: 200px; /* Hacer el contenedor redondo */
   height: 200px; /* Hacer el contenedor redondo */
   overflow: hidden;

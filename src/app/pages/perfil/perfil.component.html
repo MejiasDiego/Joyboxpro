@@ -1,31 +1,39 @@
 <div class="parent">
-<h1>Datos de usuario</h1>
-<div
-  *ngIf="authService.isLoggedIn()"
-  class="animate__animated animate__fadeIn ae-grid au-xs-ta-center au-mb-4 container"
->
-  <!-- <div
+  <h1>Datos de usuario</h1>
+  <div
+    *ngIf="authService.isLoggedIn()"
+    class="animate__animated animate__fadeIn ae-grid au-xs-ta-center au-mb-4 container"
+  >
+    <!-- <div
     class="ae-grid__item item-lg-4 ae-kappa au-mb-3"
   > -->
-  <h3 class="ae-u-bolder au-mb-3">
-    Usuario: {{ authService.getUsername() | titlecase }}
-  </h3>
-  <h5 class="au-lg-ta-left ae-u-bolder au-mb-3 au-pl-4 au-pr-4">
-    Nombre: {{ usuario?.usuario }}
-  </h5>
-  <h5 class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
-    Pass: {{ psw | password }}
-  </h5>
-  <button (click)="authService.logout()">Cerrar sesión</button>
-</div>
-<!-- </div> -->
-<div class="container" *ngIf="authService.isLoggedIn() === false">
-  <div
-    class="animate__animated animate__fadeIn ae-grid au-xs-ta-center au-mb-4"
-  >
-    <h5 class="ae-u-bolder au-mt-2">Sesión cerrada</h5>
-    <button><a routerLink="/login">Iniciar sesión</a></button>
-    <button><a routerLink="/register">Registrarse</a></button>
+    <h3 class="ae-u-bolder au-mb-3">
+      Usuario: {{ authService.getUsername() | titlecase }}
+    </h3>
+
+    <h5 class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
+      Pass: {{ psw | password }}
+    </h5>
+    <h5 class="au-lg-ta-left ae-u-bolder au-mb-3 au-pl-4 au-pr-4">
+      Nombre: {{ usuario?.usuario }}
+    </h5>
+    <h5 class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
+      Correo: {{ usuario?.correo }}
+    </h5>
+    <h5 class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
+      Número: {{ usuario?.telefono }}
+    </h5>
+
+    <button (click)="authService.logout()">Cerrar sesión</button>
+  </div>
+  <!-- </div> -->
+  <div class="container" *ngIf="authService.isLoggedIn() === false">
+    <div
+      class="animate__animated animate__fadeIn ae-grid au-xs-ta-center au-mb-4"
+    >
+      <h5 class="ae-u-bolder au-mt-2">Sesión cerrada</h5>
+      <button><a routerLink="/login">Iniciar sesión</a></button>
+      <button><a routerLink="/register">Registrarse</a></button>
+    </div>
   </div>
 </div>
-</div>  

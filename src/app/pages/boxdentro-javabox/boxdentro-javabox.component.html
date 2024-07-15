@@ -3,9 +3,8 @@
     <div class="row">
       <div class="col-md-8">
         <h1>{{ box.title }}</h1>
-
         <div class="row" id="book-list">
-          <div class="col-md-4" *ngFor="let book of displayedBooks">
+          <div class="col-md-4 book-card" *ngFor="let book of displayedBooks">
             <div class="card">
               <img [src]="book.img" class="card-img-top" [alt]="book.title" />
               <div class="card-body">
@@ -39,7 +38,6 @@
             <button class="btn btn-secondary" (click)="filterBooks(6)">
               35 €
             </button>
-
             <input
               type="number"
               class="form-control"
@@ -67,3 +65,4 @@
     </div>
   </div>
 </div>
+  

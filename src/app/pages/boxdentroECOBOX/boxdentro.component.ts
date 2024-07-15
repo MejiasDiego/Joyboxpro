@@ -9,7 +9,7 @@ import { CarritoService } from '../../servicios/carrito.service';
   imports: [FormsModule, CommonModule],
   selector: 'app-boxdentro',
   templateUrl: './boxdentro.component.html',
-  styleUrls: ['./boxdentro.component.css'],
+  styleUrls: ['./boxdentro.component.css']
 })
 export class BoxDentroComponent implements OnInit {
   constructor(private carritoService: CarritoService, private router: Router) {}
@@ -18,8 +18,7 @@ export class BoxDentroComponent implements OnInit {
     title: 'ECO BOX',
     img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Eco_Box.jpg?alt=media&token=4b1037e4-9a04-4316-9787-c64ee392749b',
     price: 25,
-    description:
-      'Explorar y salva la naturaleza a través de aventuras submarinas y creando tu granja.',
+    description: 'Explorar y salva la naturaleza a través de aventuras submarinas y creando tu granja.',
   };
 
   games = [
@@ -65,10 +64,28 @@ export class BoxDentroComponent implements OnInit {
   }
 
   filterGames(amount: number) {
-    if (amount === 0) {
-      this.displayedGames = this.games;
-    } else {
-      this.displayedGames = this.games.slice(0, amount);
+    const gameList = document.getElementById('game-list');
+    if (gameList) {
+      const cards = gameList.getElementsByClassName('game-card');
+      Array.from(cards).forEach((card: Element) => {
+        card.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        if (amount === 0) {
+          this.displayedGames = this.games;
+        } else {
+          this.displayedGames = this.games.slice(0, amount);
+        }
+
+        setTimeout(() => {
+          const newCards = gameList.getElementsByClassName('game-card');
+          Array.from(newCards).forEach((card: Element) => {
+            card.classList.remove('fade-out');
+            card.classList.add('fade-in');
+          });
+        }, 50); // Small delay to trigger the fade-in animation
+      }, 500); // Duration of the fade-out animation
     }
   }
 
@@ -78,9 +95,7 @@ export class BoxDentroComponent implements OnInit {
       const distance = this.countdownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 

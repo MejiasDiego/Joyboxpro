@@ -7,7 +7,7 @@ import { CarritoService } from '../../servicios/carrito.service';
 @Component({
   standalone: true,
   imports: [FormsModule, CommonModule],
-  selector: 'app-boxdentroMIRRORBOX',
+  selector: 'app-mirrorbox',
   templateUrl: './boxdentro-mirrorbox.component.html',
   styleUrls: ['./boxdentro-mirrorbox.component.css'],
 })
@@ -15,48 +15,48 @@ export class BoxDentroMIRRORBOXComponent implements OnInit {
   constructor(private carritoService: CarritoService, private router: Router) {}
 
   box = {
-    title: 'MIRROR BOX',
-    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Mirror_Box.jpg?alt=media&token=18df8d46-443c-4ffd-bcd3-3d683cc97e7b', // Actualizar con la imagen correcta
+    title: 'Mirror Box',
+    img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Mirror_Box.jpg?alt=media&token=4b1037e4-9a04-4316-9787-c64ee392749b',
     price: 25,
-    description: 'Saber nuestro pasado para evitar cometer los mismos errores en el futuro. Este pack busca reflejar las injusticias que hay en el mundo y mostrar los horrores de la guerra.',
+    description: 'Explora el espejo mágico y descubre mundos fascinantes.',
   };
 
   games = [
     {
-      title: 'Papers, Please',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FPapers%20Please.webp?alt=media&token=cf0599e8-574e-4555-ab1f-64566d9ff701',
-      rating: '97% positivo en Steam'
+      title: 'Stardew Valley',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FStardewValley.webp?alt=media&token=895a7559-e651-4662-a37d-b771532e46f4',
+      rating: '96% positivo en Steam',
     },
     {
-      title: 'This War of Mine',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThis%20War%20of%20Mine.webp?alt=media&token=9474d95c-4af8-4d1e-a619-144a562fcd9f',
-      rating: '94% positivo en Steam'
+      title: 'Firewatch',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2Ffirewatch.jpg?alt=media&token=0cffd4b1-eed0-4679-add0-a80ebcc8b4b1',
+      rating: '93% positivo en Steam',
     },
     {
-      title: 'Detroid: Become Human',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FDetroid%20Become%20Human.webp?alt=media&token=43e1684f-21dd-4350-ac6e-f87c1c8c56a4',
-      rating: '95% positivo en Steam'
+      title: 'Farming Simulator',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FfarmingSimulator.webp?alt=media&token=ae42ef33-93fc-4886-bc78-c9ae485869a3',
+      rating: '80% positivo en Steam',
     },
     {
-      title: 'My Child Lebensborn',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FMy%20Child%20Lebensborn.webp?alt=media&token=fcbc59d7-74ef-412d-a177-0d284b3f87ed',
-      rating: '96% positivo en Steam'
+      title: 'Unravel',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FUnravel.webp?alt=media&token=41a231f6-33a1-4012-a055-64bcf0866e35',
+      rating: '91% positivo en Steam',
     },
     {
-      title: 'Bury Me, My Love',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FBury%20Me%2C%20My%20Love.webp?alt=media&token=d5bd8cb5-3a87-4e0b-bc58-1758915d626a',
-      rating: '70% positivo en Steam'
+      title: 'The Forest',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FThe_Forest_game.webp?alt=media&token=db9ca9eb-e6a0-4846-9b47-4f905ad84f9c',
+      rating: '82% positivo en Steam',
     },
     {
-      title: 'Valiant Hearts: The Great War',
-      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FValiant%20Hearts.webp?alt=media&token=16693996-2e23-4986-aef8-9aa850e254cc',
-      rating: '95% positivo en Steam'
+      title: 'Maneater',
+      img: 'https://firebasestorage.googleapis.com/v0/b/joybox-678b1.appspot.com/o/Juegos%20Articulos%2FManeater.webp?alt=media&token=4e6673a6-6867-4ae1-a3b4-c796d92b6b86',
+      rating: '78% positivo en Steam',
     },
   ];
 
   displayedGames = this.games;
   countdown: string = '';
-  countdownDate: number = new Date().getTime() + 6 * 24 * 60 * 60 * 1000;
+  countdownDate: number = new Date().getTime() + 1 * 24 * 60 * 60 * 1000;
   customPrice: number = 0;
 
   ngOnInit() {
@@ -64,11 +64,28 @@ export class BoxDentroMIRRORBOXComponent implements OnInit {
   }
 
   filterGames(amount: number) {
-    // Lógica para mostrar las cartas según el importe
-    if (amount === 0) {
-      this.displayedGames = this.games;
-    } else {
-      this.displayedGames = this.games.slice(0, amount); // Ejemplo: muestra solo los primeros 'amount' juegos
+    const gameList = document.getElementById('game-list');
+    if (gameList) {
+      const cards = gameList.getElementsByClassName('game-card');
+      Array.from(cards).forEach((card: Element) => {
+        card.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        if (amount === 0) {
+          this.displayedGames = this.games;
+        } else {
+          this.displayedGames = this.games.slice(0, amount);
+        }
+
+        setTimeout(() => {
+          const newCards = gameList.getElementsByClassName('game-card');
+          Array.from(newCards).forEach((card: Element) => {
+            card.classList.remove('fade-out');
+            card.classList.add('fade-in');
+          });
+        }, 50); // Small delay to trigger the fade-in animation
+      }, 500); // Duration of the fade-out animation
     }
   }
 
@@ -78,7 +95,9 @@ export class BoxDentroMIRRORBOXComponent implements OnInit {
       const distance = this.countdownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 

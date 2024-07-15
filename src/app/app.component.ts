@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./shared2/footer/footer.component";
 import { HeaderComponent } from "./shared2/header/header.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,

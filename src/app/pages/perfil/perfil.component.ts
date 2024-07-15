@@ -21,6 +21,9 @@ import { PasswordPipe } from '../../pipes/password.pipe';
 export class PerfilComponent implements OnInit {
   usuario: User | undefined;
   psw: string | any = '';
+  nombre: string | any = '';
+  correo: string | any = '';
+  telefono: number | any = '';
 
   constructor(public authService: AuthService) {}
 
@@ -28,6 +31,9 @@ export class PerfilComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.usuario = this.authService.getUsuarioDB();
       this.psw = this.usuario?.pass;
+      this.correo = this.usuario?.correo;
+      this.nombre = this.usuario?.nombre;
+      this.telefono = this.usuario?.telefono;
     }
   }
 }
