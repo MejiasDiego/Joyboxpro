@@ -57,7 +57,7 @@ export class BoxDentroJAVABOXComponent implements OnInit {
 
   displayedBooks = this.books;
   countdown: string = '';
-  countdownDate: number = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
+  countdownDate: number = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
   customPrice: number = 0;
 
   ngOnInit() {
