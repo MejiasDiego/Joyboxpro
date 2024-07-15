@@ -91,3 +91,6 @@ h2{
   font-display: block;
   margin-top: 20px;
 }
+.form-label {
+  margin-right: 10px; /* Ajusta el espacio según sea necesario */
+}
