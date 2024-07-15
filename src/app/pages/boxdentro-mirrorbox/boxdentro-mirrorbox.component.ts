@@ -56,7 +56,7 @@ export class BoxDentroMIRRORBOXComponent implements OnInit {
 
   displayedGames = this.games;
   countdown: string = '';
-  countdownDate: number = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
+  countdownDate: number = new Date().getTime() + 6 * 24 * 60 * 60 * 1000;
   customPrice: number = 0;
 
   ngOnInit() {
