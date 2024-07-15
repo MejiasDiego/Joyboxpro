@@ -4,6 +4,14 @@
   color: #ffffff;
   min-height: calc(100vh - 110px);
 }
+.header{  
+  text-align: center;
+  margin-top: 125px;
+}
+
+.parrafo p{
+  font-size: 1.5em;
+}
 
 .verBox {
   background-color: #EC0909;
@@ -163,16 +171,15 @@
 .header-title {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #ec0909;
-  font-family: "Arial", sans-serif;
-  text-align: left; /* Puedes cambiarlo a 'center' o 'right' según prefieras */
-  margin-left: 100px; /* Ajusta este valor para mover el título a la derecha */
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center; /* Puedes cambiarlo a 'center' o 'right' según prefieras */
+  
 }
 
 .texto-derecha {
-  margin-left: -170px; /* Ajusta este valor según lo necesites */
-  width: 70%; /* Ajusta este valor según lo necesites */
-}
+  text-align: center;
+} 
 
 /* Media Queries para Responsividad */
 @media (max-width: 1200px) {
